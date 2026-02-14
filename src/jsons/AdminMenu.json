@@ -1,0 +1,87 @@
+[
+  {
+    "section": "Dashboard",
+    "icon": "HiHome",
+    "items": [],
+    "href": "/admin/dashboard"
+  },
+  {
+    "section": "Product",
+    "icon": "FaProductHunt",
+    "items": [
+      {
+        "name": "Add Product",
+        "icon": "HiPlusCircle",
+        "href": "/admin/product/add-product"
+      },
+      {
+        "name": "Products List",
+        "icon": "HiViewList",
+        "href": "/admin/product/product-list"
+      },
+      {
+        "name": "Manage Category",
+        "icon": "HiTag",
+        "href": "/admin/product-category"
+      },
+      {
+        "name": "Manage Brand",
+        "icon": "HiCube",
+        "href": "/admin/product-brand"
+      }
+    ]
+  },
+  {
+    "section": "Order",
+    "icon": "HiMap",
+    "items": [
+      {
+        "name": "Order List",
+        "icon": "HiViewList",
+        "href": "/admin/order/list"
+      }
+    ]
+  },
+  {
+    "section": "Inventory",
+    "icon": "HiCube",
+    "items": [
+      {
+        "name": "Stock List",
+        "icon": "HiTag",
+        "href": "/admin/inventory/stock"
+      }
+    ]
+  },
+  {
+    "section": "Setting",
+    "icon": "HiCog",
+    "items": [
+      {
+        "name": "Product Attribute",
+        "icon": "FaProductHunt",
+        "href": "/admin/product/attribute"
+      },
+      {
+        "name": "Manage Location",
+        "icon": "FaMapLocation",
+        "href": "/admin/manage-location"
+      },
+      {
+        "name": "Manage Shipping",
+        "icon": "FaShippingFast",
+        "href": "/admin/manage-shipping"
+      },
+      {
+        "name": "Site Setting",
+        "icon": "FaSitemap",
+        "href": "/admin/site-setting"
+      },
+      {
+        "name": "Banner Setting",
+        "icon": "HiPhotograph",
+        "href": "/admin/banner-setting"
+      }
+    ]
+  }
+]
