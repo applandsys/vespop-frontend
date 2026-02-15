@@ -29,9 +29,9 @@ const ProductGridCard = ({product}) => {
     return (
         <>
             <div
-                className="bg-white rounded-xl shadow p-2 relative hover:shadow-lg border border-gray-100 hover:border-green-300 transition"
+                className="bg-white rounded-xl shadow p-4 relative hover:shadow-lg border border-gray-100 hover:border-green-300 transition"
             >
-                    <span className={`absolute top-0 left-0  py-1 text-white text-sm rounded-tl-xl rounded-br-xl ${product.labelColor}`}>
+                    <span className={`absolute top-0 left-0 px-3 py-1 text-white text-sm rounded-tl-xl rounded-br-xl ${product.labelColor}`}>
                         {product.label}
                     </span>
                         {product.images?.length > 0 && (
@@ -41,11 +41,11 @@ const ProductGridCard = ({product}) => {
                                         width={500}
                                         height={500}
                                         src={`${config.publicPath}/images/products/${product.images[0].name}`}
-                                        alt={product.images[0].altText} className="mx-auto w-full object-contain rounded-md"  />
+                                        alt={product.images[0].altText} className="mx-auto w-full object-contain p-4" />
                                 </Link>
                             </div>
                         )}
-                <div className="mt-4 px-2 pb-4">
+                <div className="mt-4">
                     <p className="text-gray-500 text-sm">{product.category}</p>
                     <Link href={`/product/detail/${product.slug}`}><h3 className="font-semibold text-base mt-1">{product.name}</h3></Link>
                     <p className="text-sm text-gray-500 mt-1">By <span className="text-green-500">{product.brand}</span></p>

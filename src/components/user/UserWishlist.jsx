@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import config from "@/config";
 
 
 export default function UserWishlist({wishlistItems}) {
@@ -19,15 +21,16 @@ export default function UserWishlist({wishlistItems}) {
                         >
                             {/* Product Info */}
                             <div className="flex items-center">
-                                <img
-                                    src={item.image}
-                                    alt={item.name}
-                                    className="w-16 h-16 object-cover rounded-md border"
-                                />
+                                <Image
+                                    width={50}
+                                    height={50}
+                                    src={`${config.publicPath}/images/products/${item.product.images[0].name}`}
+                                    alt={item.product.images[0].altText} className="w-16 h-16 object-cover rounded-md border" />
+
                                 <div className="ml-4">
-                                    <p className="font-medium text-gray-800">{item.name}</p>
+                                    <p className="font-medium text-gray-800">{item.product.name}</p>
                                     <p className="text-sm text-gray-500">
-                                        ${item.price.toFixed(2)}
+                                        ${item.product.sellPrice.toFixed(2)}
                                     </p>
                                 </div>
                             </div>

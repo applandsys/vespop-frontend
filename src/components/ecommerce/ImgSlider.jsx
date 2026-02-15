@@ -35,26 +35,31 @@ export default function ImgSlider() {
     if (loading) return <div className="p-4">Fetching Data ...</div>;
 
     return (
-        <div className="relative w-full aspect-[16/9] md:aspect-[16/7] overflow-hidden">
-            {banners.map((item, index) => (
+        <div className="relative w-full aspect-[16/9] md:aspect-[16/7] overflow-hidden rounded-md">
+
+
+        {banners.map((item, index) => (
                 <div
                     key={index}
                     className={`absolute inset-0 transition-opacity duration-1000 ${
                         index === current ? "opacity-100 z-10" : "opacity-0 z-0"
                     }`}
                 >
-                    {/*<div className="absolute w-full md:w-1/2 inset-0 flex justify-center text-left ml-4 sm:ml-10 z-20 flex-col pointer-events-none">*/}
-                    {/*    <h1*/}
-                    {/*        className="text-[1.3rem] lg:text-6xl font-bold drop-shadow-lg mb-2 text-center md:text-left lg:text-left w-full text-black">*/}
-                    {/*        {item.title_text}*/}
-                    {/*    </h1>*/}
-                    {/*    <div className="relative text-wrap flex-wrap py-4 px-6">*/}
-                    {/*        <h2*/}
-                    {/*            className="ext-base text-[15px] sm:text-xl md:text-xl max-w-md mb-6 text-center md:text-left lg:text-left  text-black">*/}
-                    {/*            {item.sub_text}*/}
-                    {/*        </h2>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
+                    {/* Text Layer */}
+                    <div className="absolute w-full md:w-1/2 inset-0 flex justify-center text-left ml-4 sm:ml-10 z-20 flex-col pointer-events-none">
+                        <h1
+                            className="text-[1.3rem]  lg:text-6xl font-bold drop-shadow-lg mb-2 text-center md:text-left lg:text-left w-full text-black"
+                        >
+                            {item.title_text}
+                        </h1>
+                        <h2
+                            className="ext-base text-[15px] sm:text-xl md:text-xl max-w-md mb-6 text-center md:text-left lg:text-left  text-black"
+                        >
+                            {item.sub_text}
+                        </h2>
+                    </div>
+
+                    {/* Background Image */}
                     <Image
                         src={`${config.publicPath}/images/banners/${item.image}`}
                         alt={`Slide ${index + 1}`}
@@ -64,12 +69,16 @@ export default function ImgSlider() {
                     />
                 </div>
             ))}
+
+            {/* Left Arrow */}
             <button
                 onClick={prevSlide}
                 className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow-lg z-10"
             >
                 <ArrowLeftIcon className="h-6 w-6 text-gray-800" />
             </button>
+
+            {/* Right Arrow */}
             <button
                 onClick={nextSlide}
                 className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow-lg z-10"

@@ -14,7 +14,6 @@ import ProductAttributes from "@/components/admin/ecommerce/ProductAttributes";
 import {fetchAllocations} from "@/services/ecommerce/fetchLocations";
 import {fetchAllProductBrand} from "@/services/ecommerce/ProductBrand";
 import { useRouter } from 'next/navigation';
-import ErrorAlert from "@/components/ui/ErrorAlert";
 // import {router} from "next/client";
 
 const ProductAddEditForm = ({ productId }) => {
@@ -44,7 +43,7 @@ const ProductAddEditForm = ({ productId }) => {
     const [newImages, setNewImages] = useState({
         images: [],
     });
-    const [selectedLabels, setSelectedLabels] = useState([]);
+
     const [selectedBrand,setSelectedBrand] = useState([]);
 
     const [locationEnabled, setLocationEnabled] = useState(false);
@@ -54,7 +53,6 @@ const ProductAddEditForm = ({ productId }) => {
     const [formDataPrime, setFormDataPrime] = useState(null);
     const [formDataCity, setFormDataCity] = useState(null);
     const [formDataSubCity, setFormDataSubCity] = useState(null);
-    const [formErrors, setFormErrors] = useState([]);
 
     const handleChangePrime = (e) => {
         setFormDataPrime(e.target.value);
@@ -80,9 +78,9 @@ const ProductAddEditForm = ({ productId }) => {
         discount: 0,
         point: 0,
         isFeatured: false,
-        tags: '',
+        tags: [],
         brand: null,
-        model: '',
+        modelNumber: null,
         visibility: 'published'
     };
     const [formData, setFormData] = useState(formInputs);
@@ -91,20 +89,12 @@ const ProductAddEditForm = ({ productId }) => {
         if (productId) {
             getProductDetail(productId).then((res) => {
                 const productDetail = res.data;
-
+                console.log(productDetail);
                 setFormData({
                     ...productDetail,
-                    tags: productDetail.tags?.length
-                        ? productDetail.tags.map(tag => tag.tagName).join(',')
-                        : '',
                     categoryId: productDetail.categories.map(cat => cat.id),
                    // images: productDetail.images.map(img => img.name),
                 });
-
-                if (productDetail?.labels) {
-                    const ids = productDetail.labels.map(l => l.labelId);
-                    setSelectedLabels(ids);   // ✅ preselect
-                }
 
                 setExistingImages(
                      productDetail.images.map(img => img),
@@ -182,7 +172,7 @@ const ProductAddEditForm = ({ productId }) => {
             {
                 id: serial,
                 sku: attributeSku,
-                model: formInputs.model,
+                model: formInputs.modelNumber,
                 quantity: attributeQuantity,
                 buyPrice: attributeBuyPrice,
                 sellPrice: attributeSellPrice,
@@ -227,10 +217,9 @@ const ProductAddEditForm = ({ productId }) => {
         setAddedProductAttributes((prevState) => prevState.filter((_, idx) => idx !== index));
     };
 
-    const handleChangeVisibility = (visibility) => {
-        setFormData(prev => ({ ...prev, visibility }));
-    };
-
+    const handleChangeVisibility = (visibilty) =>{
+        formInputs.visibility = visibilty;
+    }
 
     const resetForm = () => {
         setFormData(formInputs);
@@ -240,10 +229,7 @@ const ProductAddEditForm = ({ productId }) => {
     };
 
     const handleChange = (e) => {
-        setFormErrors([]); // clear errors when user edits
-
         const { name, value, files, checked, type } = e.target;
-
         if (name === 'image') {
             setFormData({ ...formData, [name]: Array.from(files) });
         } else if (name === 'categoryId' && type === 'select-multiple') {
@@ -256,30 +242,16 @@ const ProductAddEditForm = ({ productId }) => {
         }
     };
 
-
     const handleChangeBrand = (e) =>{
-        setFormErrors([]);
         setSelectedBrand(e.target.value)
     }
 
-    // const handleAddLabels = (label) => {
-    //     setProductLabels((prevLabels) => {
-    //         if (!prevLabels.some(item => item.id === label.id)) {
-    //             return [...prevLabels, label];
-    //         }
-    //         return prevLabels.filter((item) => item.id !== label.id);
-    //     });
-    // };
-
     const handleAddLabels = (label) => {
-        setSelectedLabels(prev => {
-            if (prev.includes(label.id)) {
-                // remove
-                return prev.filter(id => id !== label.id);
-            } else {
-                // add
-                return [...prev, label.id];
+        setProductLabels((prevLabels) => {
+            if (!prevLabels.some(item => item.id === label.id)) {
+                return [...prevLabels, label];
             }
+            return prevLabels.filter((item) => item.id !== label.id);
         });
     };
 
@@ -329,80 +301,18 @@ const ProductAddEditForm = ({ productId }) => {
         });
     };
 
-    const validateForm = () => {
-        const errors = [];
-
-        if (!formData.name?.trim()) {
-            errors.push("Product name is required");
-        }
-
-        if (!formData.categoryId || formData.categoryId.length === 0) {
-            errors.push("At least one category must be selected");
-        }
-
-        if (!selectedBrand) {
-            errors.push("Brand must be selected");
-        }
-
-        if (!existingImages.length && (!formData.image || formData.image.length === 0)) {
-            errors.push("At least one product image is required");
-        }
-
-        if (formData.buyPrice <= 0) {
-            errors.push("Buy price must be greater than 0");
-        }
-
-        if (formData.sellPrice <= 0) {
-            errors.push("Sell price must be greater than 0");
-        }
-
-        if (!formData.visibility) {
-            errors.push("Visibility must be selected");
-        }
-
-        // Variant validation
-        if ((isSize || isColor || isWeight) && addedProductAttributes.length === 0) {
-            errors.push("You enabled attributes but didn't add any variant");
-        }
-
-        // Each variant validation
-        addedProductAttributes.forEach((variant, index) => {
-            if (!variant.sku) {
-                errors.push(`Variant #${index + 1} SKU missing`);
-            }
-            if (variant.quantity <= 0) {
-                errors.push(`Variant #${index + 1} quantity invalid`);
-            }
-            if (variant.buyPrice <= 0) {
-                errors.push(`Variant #${index + 1} buy price invalid`);
-            }
-            if (variant.sellPrice <= 0) {
-                errors.push(`Variant #${index + 1} sell price invalid`);
-            }
-        });
-
-        return errors;
-    };
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setSubmitting(true);
 
-        const errors = validateForm();
-
-        if (errors.length > 0) {
-            setFormErrors(errors);
-            window.scrollTo({ top: 0, behavior: "smooth" });
+        if (!existingImages.length && !formData.image.length) {
+            alert('At least one image needs to be uploaded');
             return;
         }
 
-        setFormErrors([]); // clear old err
-        setSubmitting(true);
-
-
         const form = new FormData();
         form.append('name', formData.name);
-        form.append('model', formData.model);
+        form.append('modelNumber', formData.modelNumber);
         form.append('shortDescription', formData.shortDescription);
         form.append('description', formData.description);
         form.append('specification', formData.specification);
@@ -415,7 +325,7 @@ const ProductAddEditForm = ({ productId }) => {
         form.append('attributeProducts', JSON.stringify(addedProductAttributes));
         form.append('tags', formData.tags || '');
         form.append('visibility', formData.visibility);
-        form.append('productLabels', JSON.stringify(selectedLabels));
+        form.append('productLabels', JSON.stringify(productLabels));
         form.append('existingImages', JSON.stringify(existingImages));
         form.append('brandId', selectedBrand);
 
@@ -438,11 +348,12 @@ const ProductAddEditForm = ({ productId }) => {
                 method: productId ? 'PUT' : 'POST',
                 body: form,
             });
+
             const data = await response.json();
             if (response.ok) {
                 alert(productId ? 'Product updated successfully' : 'Product added successfully');
                 resetForm();
-                router.push('/admin/product/product-list');
+                router.push('/admin/product/product-list'); // Redirect to the product list page
             } else {
                 alert('Error occurred while saving the product');
             }
@@ -451,8 +362,6 @@ const ProductAddEditForm = ({ productId }) => {
         } finally {
             setSubmitting(false);
         }
-
-
     };
 
 
@@ -460,11 +369,12 @@ const ProductAddEditForm = ({ productId }) => {
     if (error) return <div className="p-4 text-red-500">Error Happened contact Admin</div>;
 
     return (
-        <div className="p-4">
+        <>
         <form onSubmit={handleSubmit} className=" mx-auto p-2   space-y-2">
             <div className="grid grid-cols-[1fr_3fr] gap-2 h-screen m-10">
                 <aside>
                    <UiCard>
+
                        <div className="">
                            <label className="block text-sm font-medium text-gray-700 mb-1">Tags</label>
                            <input
@@ -475,12 +385,13 @@ const ProductAddEditForm = ({ productId }) => {
                                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
                            />
                        </div>
+
                        <div className="">
                            <label className="block text-sm font-medium text-gray-700 mb-1">Model</label>
                            <input
                                type="text"
-                               name="model"
-                               value={formData.model}
+                               name="modelNumber"
+                               value={formData.modelNumber}
                                onChange={handleChange}
                                className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
                            />
@@ -494,13 +405,9 @@ const ProductAddEditForm = ({ productId }) => {
                                        type="radio"
                                        name="visibility"
                                        value="published"
-                                       checked={formData.visibility === "published"}   // ✅ this is the key
-                                       onChange={(e) => setVisibility(e.target.value)}
-                                       className="w-4 h-4"
-                                   />
-                                   <label className="block text-sm font-medium text-gray-700 px-2">
-                                       Published
-                                   </label>
+                                       onChange={(e)=>handleChangeVisibility(e.target.value)}
+                                       className="w-4 h-4 px-2"
+                                   /> <label className="block text-sm font-medium text-gray-700  px-2">Published</label>
                                </div>
 
                                <div className="flex items-center">
@@ -508,7 +415,6 @@ const ProductAddEditForm = ({ productId }) => {
                                        type="radio"
                                        name="visibility"
                                        value="unlisted"
-                                       checked={formData.visibility === "unlisted"}   // ✅ this is the key
                                        onChange={(e)=>handleChangeVisibility(e.target.value)}
                                        className="w-4 h-4 px-2"
                                    /> <label className="block text-sm font-medium text-gray-700 px-2">Unlisted</label>
@@ -518,32 +424,30 @@ const ProductAddEditForm = ({ productId }) => {
 
                         <div className="my-4">
                            <label className="block text-sm font-medium text-gray-700 mb-1">Labels</label>
-                            <div>
-                                {allProductLabels.map(label => (
-                                    <div className="flex items-center gap-1" key={label.id}>
-                                        <input
-                                            type="checkbox"
-                                            name="labels"
-                                            checked={selectedLabels.includes(label.id)}  // ✅ magic line
-                                            onChange={() => handleAddLabels(label)}
-                                            className="w-4 h-4"
-                                        />
-                                        <label className="block text-sm font-medium text-gray-700 px-2">
-                                            {label.name}
-                                        </label>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                           <div className="">
+                               {allProductLabels.map(label => (
+                                   <div className="flex items-center gap-1" key={label.id}>
+                                       <input
+                                           type="checkbox"
+                                           name="labels"
+                                           onChange={(e) => handleAddLabels(label)}  // Pass the entire label object
+                                           className="w-4 h-4 px-2"
+                                       />
+                                       <label className="block text-sm font-medium text-gray-700 px-2">{label.name}</label>
+                                   </div>
+                               ))}
+                           </div>
+                       </div>
 
                        <hr/>
 
                        <div>
-                           <label className="block text-sm font-medium text-gray-700 mb-1 text-center"> Brand </label><select
-                           name="brand"
-                           value={selectedBrand || ""}
-                           onChange={handleChangeBrand}
-                           className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           <label className="block text-sm font-medium text-gray-700 mb-1 text-center"> Brand </label>
+                           <select
+                               name="brand"
+                               value={formData.brand}
+                               onChange={handleChangeBrand}
+                               className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                            >
                                <option  value="">
                                    Select Brand
@@ -556,6 +460,8 @@ const ProductAddEditForm = ({ productId }) => {
                            </select>
                        </div>
                        <hr/>
+
+
                        <div className="my-4">
                            <div className="flex items-center gap-1">
                                <input
@@ -636,18 +542,7 @@ const ProductAddEditForm = ({ productId }) => {
                    </UiCard>
                 </aside>
 
-                <main className="bg-white">
-
-                    <div className="sticky top-2 z-50 bg-white p-2">
-                        {formErrors.length > 0 && (
-                            <div className="space-y-2">
-                                {formErrors.map((err, index) => (
-                                    <ErrorAlert key={index} error={err} />
-                                ))}
-                            </div>
-                        )}
-                    </div>
-
+                <main className="bg-white ">
                     <UiCard>
                         <div className="border-b border-gray-300 mb-4">
                             <label className="font-bold text-gray-600">Product Info:</label>
@@ -663,6 +558,8 @@ const ProductAddEditForm = ({ productId }) => {
                                 required
                             />
                         </div>
+
+
                         <div className="my-4">
                             <label className="block text-sm font-medium text-gray-700 mb-1">Short Description</label>
                             <textarea
@@ -1025,7 +922,7 @@ const ProductAddEditForm = ({ productId }) => {
                 </main>
             </div>
         </form>
-        </div>
+        </>
     );
 };
 

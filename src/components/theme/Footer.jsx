@@ -6,35 +6,11 @@ import Image from "next/image";
 import SmallCard from "@/components/theme/SmallCard";
 import config from '@/config';
 import {usePathname} from "next/navigation";
-import React, {useEffect, useState} from "react";
-import {fetchBannerBySlug} from "@/services/site/BannerData";
-import {fetchSettingData} from "@/services/site/SettingData";
+import React from "react";
 
 export default function Footer (){
     const pathname = usePathname();
     const hasWord = pathname.includes('admin');
-
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [banners, setBanners] = useState([]);
-    const [siteLogo, setSiteLogo] = useState('logo.png');
-
-
-    useEffect(() => {
-        setLoading(true);
-        fetchBannerBySlug("footer-promo")
-            .then((json) => {
-                if (json.success) setBanners(json.data);
-            })
-            .catch((error) => setError(error))
-            .finally(() => setLoading(false));
-        fetchSettingData().then((setting) => {
-            setSiteLogo(setting.data.logo)
-        }).catch((error) => {});
-
-    }, []);
-
-    if (loading) return <div className="p-4">Loading Data ...</div>;
 
     return (
         <>
@@ -43,16 +19,17 @@ export default function Footer (){
                     <hr/>
                     <div className="container flex flex-col md:flex-row justify-between bottom-footer mt-4">
                         <div className="py-4 text-center md:text-left">
-                            <div className="text-xs">© 2026 Bdhoms.com. All rights reserved </div>
+                            <div className="text-xs">© 2024 OmninestGlobal. All rights reserved </div>
                         </div>
                     </div>
                 </footer>
             ) : (
                 <footer className="mx-auto mt-12 px-4 md:px-8">
+                    {/* Promo Banner Section - Mobile perfect, Desktop with split text */}
                     <div className="mt-6">
                         <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 rounded-xl overflow-hidden">
                             <Image
-                                src={`${config.publicPath}/images/banners/${banners[0]?.image}`}
+                                src={`${config.publicPath}/images/promo/banner-10.png`}
                                 fill
                                 alt="Promo banner - Get your daily needs from OmniNest"
                                 className="object-cover object-[75%_center] sm:object-[65%_center] md:object-center"
@@ -60,22 +37,27 @@ export default function Footer (){
                                 priority
                             />
 
+                            {/* Gradient Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent md:from-white/90 md:via-white/70 md:to-transparent"></div>
 
+                            {/* Content */}
                             <div className="absolute inset-0 flex items-center justify-start px-4 sm:px-6 md:px-8 lg:px-12">
                                 <div className="text-left max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
                                     <h1 className="text-gray-900 text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 font-quicksand leading-tight">
-                                        <span className="lg:hidden">{banners[0]?.title_text}</span>
-                                        <span className="hidden lg:block">{banners[0]?.title_text}</span>
+                                        {/* Mobile view - single line (unchanged) */}
+                                        <span className="lg:hidden">Stay home & get your daily needs from our shop</span>
+                                        {/* Desktop view - two lines */}
+                                        <span className="hidden lg:block">Stay home & get your daily needs<br/>from our shop</span>
                                     </h1>
                                     <h2 className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl">
-                                       {banners[0]?.sub_text}
+                                        Start Your Daily Shopping with <span className="font-bold text-green-600">OmniNest</span>
                                     </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    {/* Everything below remains EXACTLY the same as your mobile code */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 my-8 sm:my-12">
                         <SmallCard>
                             <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
@@ -162,10 +144,10 @@ export default function Footer (){
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 my-8 sm:my-12">
                             <div className="p-4">
                                 <Image
-                                    src={`${config.publicPath}/${siteLogo}`}
+                                    src="/images/logo.png"
                                     width={120}
                                     height={50}
-                                    alt="BdHoms Logo"
+                                    alt="OmniNest Logo"
                                     className="mb-3"
                                 />
                                 <p className="text-sm text-gray-600 leading-relaxed">
@@ -242,7 +224,7 @@ export default function Footer (){
                     <div className="flex flex-col lg:flex-row justify-between items-center gap-6 py-6">
                         <div className="text-center lg:text-left order-3 lg:order-1">
                             <div className="text-sm text-gray-600">
-                                © 2026 Bdhoms.com. All rights reserved
+                                © 2024 OmninestGlobal. All rights reserved
                             </div>
                         </div>
 

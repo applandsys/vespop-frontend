@@ -91,12 +91,30 @@ h3{
     border-radius: 10px;
 }
 
-
-@keyframes slideUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
+/* Make entire Grid.js table text smaller */
+.gridjs-table {
+  font-size: 12px !important;
 }
-.animate-slideUp {
-  animation: slideUp 0.25s ease-out;
+
+.gridjs-th,
+.gridjs-td {
+  padding: 6px 8px !important;
+  font-size: 12px !important;
+}
+
+/* Search input and pagination text */
+.gridjs-input,
+.gridjs-pagination,
+.gridjs-summary {
+  font-size: 12px !important;
+}
+
+/* Make first visible column (SL) very narrow */
+.gridjs-table th:nth-child(1),
+.gridjs-table td:nth-child(1) {
+  width: 40px !important;
+  max-width: 40px !important;
+  text-align: center;
+  padding: 4px 6px !important;
 }
 

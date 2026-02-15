@@ -1,30 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import NavigationMobile from "@/components/ecommerce/NavigationMobile";
 import CartNav from "@/components/ecommerce/CartNav";
 import Navigation from "@/components/theme/Navigation";
-import {getCategories} from "@/services/ecommerce/getCategories";
-import CategoryNavbar from "@/components/theme/CategoryNavbar";
 
 const EcommerceHeader = () => {
-
-    const [categories, setCategories] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        getCategories().then((res) => {setCategories(res)}).catch(error => setError(error)).finally(setLoading(false));
-    }, []);
-
     return (
         <>
-            <header className="mx-auto">
+            <header className="px-8 mt-4  mx-auto">
                 <NavigationMobile/>
-                <div className="my-2">
-                    <CartNav />
+                <div className="my-4">
+                    <div>
+                        <CartNav />
+                    </div>
                 </div>
-                <div>
-                    <CategoryNavbar categories={categories} />
+                <hr/>
+                <div className="my-2 ">
+                    <Navigation/>
                 </div>
+                <hr/>
             </header>
         </>
     );

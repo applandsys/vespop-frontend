@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Grid } from "gridjs-react";
 import { html } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
-import { h } from "gridjs";
 
 import { getOrders } from "@/services/ecommerce/getOrders";
 import config from "@/config";

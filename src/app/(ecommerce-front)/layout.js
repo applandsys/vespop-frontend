@@ -1,5 +1,5 @@
 import React from 'react';
-import EcommerceFrontLayout from "@/layouts/EcommerceFront";
+import EcommerceFrontLayout from "@/layouts/EcommerceFrontLayout";
 
 function EcommerceLayout({children}) {
     return (
