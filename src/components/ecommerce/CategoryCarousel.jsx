@@ -37,14 +37,14 @@ export default function CategoryCarousel() {
                     <button
                         onClick={() => scroll("prev")}
                         aria-label="Scroll left"
-                        className="bg-gray-300 hover:bg-green-600 rounded-full p-2 shadow-lg z-30"
+                        className="bg-gray-300 hover:bg-green-600 rounded-full p-2 shadow-lg z-10"
                     >
                         <ArrowLeftIcon className="h-4 w-4 text-gray-800" />
                     </button>
                     <button
                         onClick={() => scroll("next")}
                         aria-label="Scroll right"
-                        className="bg-gray-300 hover:bg-green-600 rounded-full p-2 shadow-lg z-30"
+                        className="bg-gray-300 hover:bg-green-600 rounded-full p-2 shadow-lg z-10"
                     >
                         <ArrowRightIcon className="h-4 w-4 text-gray-800" />
                     </button>

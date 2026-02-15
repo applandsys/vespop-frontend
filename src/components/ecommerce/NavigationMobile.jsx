@@ -39,24 +39,18 @@ export default function NavbarLeft() {
     return (
         <>
             <nav className="relative">
-
-                {/* Overlay */}
                 {isOpen && (
                     <div
                         className="fixed inset-0 bg-black/40 z-40"
                         onClick={() => setIsOpen(false)}
                     />
                 )}
-
-                {/* ================= SIDEBAR ================= */}
                 <div
                     className={`fixed top-0 left-0 h-screen w-[350px] bg-white border border-green-100 shadow-lg z-50
                           transform transition-transform duration-300 ease-in-out
                           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
                           flex flex-col`}
                 >
-
-                    {/* ===== Header (Fixed) ===== */}
                     <div className="flex items-center justify-between p-4 border-b shrink-0">
                         <Image
                             src={`${config.publicPath}/${siteLogo}`}
@@ -73,10 +67,7 @@ export default function NavbarLeft() {
                         </button>
                     </div>
 
-                    {/* ===== Scrollable Content ===== */}
                     <div className="flex-1 overflow-y-auto overscroll-contain touch-pan-y px-4 pb-6">
-
-                        {/* Search */}
                         <div className="my-4">
                             <input
                                 type="text"
@@ -85,7 +76,6 @@ export default function NavbarLeft() {
                             />
                         </div>
 
-                        {/* Categories */}
                         <div className="mb-2 font-semibold text-sm text-green-700 flex items-center gap-2">
                             <FiMenu className="w-4 h-4" />
                             Browse Categories
@@ -108,8 +98,8 @@ export default function NavbarLeft() {
                                                 className="w-6 h-6 rounded"
                                             />
                                             <span className="text-xs font-semibold text-gray-700 hover:text-green-500">
-                        {item.name}
-                      </span>
+                                                {item.name}
+                                            </span>
                                         </Link>
                                     </li>
                                 ))
@@ -118,7 +108,6 @@ export default function NavbarLeft() {
                             )}
                         </ul>
 
-                        {/* Static Links */}
                         <ul className="space-y-2 text-sm">
                             <li  className="border-b py-2 cursor-pointer">
                                 <Link href="/">
@@ -165,52 +154,48 @@ export default function NavbarLeft() {
                     </div>
                 </div>
 
-                {/* ================= TOP BAR ================= */}
-                <div className="flex justify-between mt-2 mx-2">
+                {/*<div className="flex justify-between mt-2 mx-2">*/}
+                {/*    <div className="flex items-center">*/}
+                {/*        <ul className="hidden md:flex space-x-6 text-xs">*/}
+                {/*            <li>*/}
+                {/*                <Link href="/about" className="text-gray-600 hover:text-blue-600">*/}
+                {/*                    About*/}
+                {/*                </Link>*/}
+                {/*            </li>*/}
+                {/*            <li>*/}
+                {/*                <Link href="/contact" className="text-gray-600 hover:text-blue-600">*/}
+                {/*                    Contact*/}
+                {/*                </Link>*/}
+                {/*            </li>*/}
+                {/*            <li><a href="#" className="hover:text-blue-500">Wishlist</a></li>*/}
+                {/*            <li><a href="#" className="hover:text-blue-500">Order Tracking</a></li>*/}
+                {/*        </ul>*/}
 
-                    {/* Left */}
-                    <div className="flex items-center">
-                        <ul className="hidden md:flex space-x-6 text-xs">
-                            <li>
-                                <Link href="/about" className="text-gray-600 hover:text-blue-600">
-                                    About
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/contact" className="text-gray-600 hover:text-blue-600">
-                                    Contact
-                                </Link>
-                            </li>
-                            <li><a href="#" className="hover:text-blue-500">Wishlist</a></li>
-                            <li><a href="#" className="hover:text-blue-500">Order Tracking</a></li>
-                        </ul>
-
-                        {!isOpen && (
-                            <button
-                                onClick={() => setIsOpen(true)}
-                                className="block md:hidden ml-2"
-                            >
-                                <svg
-                                    className="w-6 h-6"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                          d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Right */}
-                    <div className="text-xs md:text-sm text-right">
-                        Need help? Call Us:{" "}
-                        <span className="text-orange-600 font-bold">
-              {siteSetting.phone}
-            </span>
-                    </div>
-                </div>
+                {/*        {!isOpen && (*/}
+                {/*            <button*/}
+                {/*                onClick={() => setIsOpen(true)}*/}
+                {/*                className="block md:hidden ml-2"*/}
+                {/*            >*/}
+                {/*                <svg*/}
+                {/*                    className="w-6 h-6"*/}
+                {/*                    fill="none"*/}
+                {/*                    stroke="currentColor"*/}
+                {/*                    viewBox="0 0 24 24"*/}
+                {/*                >*/}
+                {/*                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}*/}
+                {/*                          d="M4 6h16M4 12h16M4 18h16" />*/}
+                {/*                </svg>*/}
+                {/*            </button>*/}
+                {/*        )}*/}
+                {/*    </div>*/}
+                {/*    */}
+                {/*    <div className="text-xs md:text-sm text-right">*/}
+                {/*        Need help? Call Us:{" "}*/}
+                {/*        <span className="text-orange-600 font-bold">*/}
+                {/*          {siteSetting.phone}*/}
+                {/*        </span>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
             </nav>
         </>
