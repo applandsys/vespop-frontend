@@ -15,19 +15,10 @@ export default function Home() {
                     <ImgSlider/>
                 </div>
                 <div className="my-4 mx-2">
-                    <h1 className="text-3xl font-bold">Featured Categories</h1>
-                    <div className="categorySlider">
-                        <CategoryCarousel/>
-                    </div>
+                    <CategoryCarousel/>
                 </div>
                 <div className="my-4 mt-8 mx-2">
-                    <ProductList />
-                </div>
-
-                <div className="my-4 mt-8 mx-2">
-                    <div className=" mt-4">
-                        <PromoCards/>
-                    </div>
+                    Product List coming soon
                 </div>
             </EcommerceFrontLayout>
         </>
