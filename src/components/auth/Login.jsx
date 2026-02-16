@@ -1,100 +1,138 @@
 "use client";
-import { useDispatch } from 'react-redux';
-import React, {useRef, useState} from 'react';
+
+import { useDispatch } from "react-redux";
+import React, { useState } from "react";
 import axios from "axios";
-import {setLoginData} from "@/redux/store/slices/authSlice";
+import { setLoginData } from "@/redux/store/slices/authSlice";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import config from "@/config";
 
-function Login({type}) {
+function Login({ type }) {
     const dispatch = useDispatch();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState(false);
     const router = useRouter();
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        setError(null);
 
         try {
-            const response = await axios.post(`${config.apiBaseUrl}/${type}/auth/login`, {
-                email,
-                password,
-            });
+            const response = await axios.post(
+                `${config.apiBaseUrl}/${type}/auth/login`,
+                { email, password }
+            );
 
-            dispatch(setLoginData({
-                token: response.data.token,
-                customer: response.data.sanitizedCustomer,
-            }));
+            dispatch(
+                setLoginData({
+                    token: response.data.token,
+                    customer: response.data.sanitizedCustomer,
+                })
+            );
 
-            if(response.data.token){
-                type==="user"? router.push('/admin/dashboard') : router.back();
+            if (response.data.token) {
+                type === "user"
+                    ? router.push("/admin/dashboard")
+                    : router.back();
             }
-
-        } catch (error) {
-            setError(error.response.data.message);
+        } catch (err) {
+            setError(err.response?.data?.message || "Login failed");
         }
     };
 
     return (
-        <div className="LoginForm p-2">
-           {type==='user' ? (    <h2 className="text-2xl font-bold text-center text-gray-800 mb-1">Admin Sign in</h2>) : ( <h2 className="text-2xl font-bold text-center text-gray-800 mb-1">Customer Sign in</h2>)}
+        <div className="min-h-screen flex items-center justify-center  px-4">
+            <div className="w-full max-w-md bg-white rounded-xl shadow-lg border border-gray-200">
+                {/* Header */}
+                <div className="px-6 py-5 border-b">
+                    <h2 className="text-xl font-bold text-center text-gray-800 font-thin">
+                        {type === "user" ? "Administrator Sign In" : "Customer Sign In"}
+                    </h2>
+                    <p className="text-sm text-gray-500 text-center mt-1">
+                        Site Administrator Sign in Form
+                    </p>
+                </div>
 
-            <div className="border border-gray-200 rounded-lg shadow-sm p-2.5">
-                <p className="text-xs">
-                    If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing & Shipping section.
-                </p>
-                <div className="mt-4">
+                {/* Body */}
+                <div className="px-6 py-6">
                     {error && (
-                        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-                             role="alert">
-                            <strong className="font-bold">  </strong>
-                            <span className="block sm:inline"> {error} </span>
-                            <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
-                                <svg className="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
-                                     viewBox="0 0 20 20"><title>Close</title><path
-                                    d="M14.348 5.652a1 1 0 10-1.414-1.414L10 7.172 7.066 4.238a1 1 0 10-1.414 1.414L8.586 8.586l-2.934 2.934a1 1 0 101.414 1.414L10 10.828l2.934 2.934a1 1 0 001.414-1.414L11.414 8.586l2.934-2.934z"/></svg>
-                              </span>
+                        <div className="mb-4 rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+                            {error}
                         </div>
                     )}
-                </div>
-                <div className="flex flex-col md:flex-row justify-between gap-4">
 
-                    <form onSubmit={handleLogin}>
-                        <div className="p-4 rounded-md w-full">
+                    <form onSubmit={handleLogin} className="space-y-4">
+                        {/* Email */}
+                        <div>
+                            <label className="block text-sm font-medium text-gray-600 mb-1">
+                                Email
+                            </label>
                             <input
                                 type="email"
-                                placeholder="Username Or Email"
-                                className="w-full p-2 border rounded mb-2"
+                                placeholder="you@example.com"
+                                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)} // Handle email input change
+                                onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
+                        </div>
+
+                        {/* Password */}
+                        <div>
+                            <label className="block text-sm font-medium text-gray-600 mb-1">
+                                Password
+                            </label>
                             <input
                                 type="password"
-                                placeholder="Password"
-                                className="w-full p-2 border rounded mb-2"
+                                placeholder="••••••••"
+                                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                                 value={password}
-                                onChange={(e) => setPassword(e.target.value)} // Handle password input change
+                                onChange={(e) => setPassword(e.target.value)}
                                 required
                             />
-                            <div className="flex justify-between items-center text-sm mb-2">
-                                <label>
-                                    <input type="checkbox" className="mr-2" />Remember me
-                                </label>
-                                <a href="#" className="text-green-600">Forgot password?</a>
-                            </div>
-                            <div className="flex justify-between items-center text-sm mb-2 mt-4">
-                                <div>
-                                     Dont have an account ? <Link href="/auth/signup" className="text-green-600">Create</Link>
-                                </div>
-                                <div>
-                                    <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded">Log In</button>
-                                </div>
-                            </div>
                         </div>
+
+                        {/* Options */}
+                        <div className="flex items-center justify-between text-sm">
+                            <label className="flex items-center gap-2 text-gray-600">
+                                <input
+                                    type="checkbox"
+                                    className="rounded border-gray-300 text-gray-600 focus:ring-gray-500"
+                                />
+                                Remember me
+                            </label>
+                            {type === "user" && (
+                                <a href="#" className="text-gray-600 hover:underline">
+                                    Forgot password?
+                                </a>
+                            )}
+                        </div>
+
+                        {/* Button */}
+                        <button
+                            type="submit"
+                            className="w-full rounded-lg bg-gray-600 py-2.5 text-white font-semibold hover:bg-gray-700 transition duration-200"
+                        >
+                            Sign In
+                        </button>
                     </form>
+
+                    {/* Footer */}
+                    {type === "user" && (
+                        <div className="mt-6 text-center text-sm text-gray-600">
+                            Don’t have an account?{" "}
+                            <Link
+                                href="/auth/signup"
+                                className="text-gray-600 font-medium hover:underline"
+                            >
+                                Create one
+                            </Link>
+                        </div>
+                    )}
+
                 </div>
             </div>
         </div>
