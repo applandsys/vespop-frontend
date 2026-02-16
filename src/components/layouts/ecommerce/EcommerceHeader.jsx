@@ -6,15 +6,15 @@ import Navigation from "@/components/theme/Navigation";
 const EcommerceHeader = () => {
     return (
         <>
-            <header className="px-8 mt-4  mx-auto">
+            <header className="mt-4  mx-auto">
                 <NavigationMobile/>
-                <div className="my-4">
+                <div className="mt-4">
                     <div>
                         <CartNav />
                     </div>
                 </div>
                 <hr/>
-                <div className="my-2 ">
+                <div className="my-2">
                     <Navigation/>
                 </div>
                 <hr/>

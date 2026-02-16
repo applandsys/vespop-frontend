@@ -16,7 +16,7 @@ export default function EcommerceFrontLayout({ children }) {
             <ReduxProvider>
                 <SnackbarProvider>
                     <Header/>
-                    <main className="min-h-screen flex flex-col md:px-8 mx-auto ">
+                    <main className="min-h-screen flex flex-col  mx-auto ">
                         {children}
                     </main>
                     <Footer/>

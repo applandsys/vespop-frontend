@@ -35,7 +35,7 @@ export default function ImgSlider() {
     if (loading) return <div className="p-4">Fetching Data ...</div>;
 
     return (
-        <div className="relative w-full aspect-[16/9] md:aspect-[16/7] overflow-hidden rounded-md">
+        <div className="relative w-full aspect-[16/9] md:aspect-[16/7] overflow-hidden">
             {banners.map((item, index) => (
                 <div
                     key={index}

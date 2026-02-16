@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <>
             <EcommerceFrontLayout>
-                <div className=" mx-2" >
+                <div className="mt-[-10px]" >
                     <ImgSlider/>
                 </div>
                 <div className="my-4 mx-2">
