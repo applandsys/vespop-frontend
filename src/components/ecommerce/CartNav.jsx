@@ -67,7 +67,7 @@ const CartNav = () => {
 
     return (
         <nav className="flex flex-col md:flex-row justify-between px-6">
-            <div className="mt-6">
+            <div className="mt-4">
                 <div className="flex-shrink-0">
                     <Link href="/" >
                         <Image
