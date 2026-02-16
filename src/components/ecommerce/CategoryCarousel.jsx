@@ -30,9 +30,9 @@ export default function CategoryCarousel() {
 
                         <Image
                             src={`${config.publicPath}/images/categories/${item.image}`}
-                            alt="..."
-                            width={60}
-                            height={60}
+                            alt={item.name}
+                            width={600}
+                            height={600}
                             className="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-110"
                         />
 
