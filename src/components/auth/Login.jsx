@@ -48,7 +48,7 @@ function Login({ type }) {
             <div className="w-full max-w-md bg-white rounded-xl shadow-lg border border-gray-200">
                 {/* Header */}
                 <div className="px-6 py-5 border-b">
-                    <h2 className="text-xl font-bold text-center text-gray-800 font-thin">
+                    <h2 className="text-xl text-center text-gray-800 font-thin">
                         {type === "user" ? "Administrator Sign In" : "Customer Sign In"}
                     </h2>
                     <p className="text-sm text-gray-500 text-center mt-1">
@@ -72,7 +72,6 @@ function Login({ type }) {
                             </label>
                             <input
                                 type="email"
-                                placeholder="you@example.com"
                                 className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -87,7 +86,6 @@ function Login({ type }) {
                             </label>
                             <input
                                 type="password"
-                                placeholder="••••••••"
                                 className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}

@@ -1,13 +1,23 @@
 "use client";
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import CategoryNavbar from "@/components/theme/CategoryNavbar";
+import {getCategories} from "@/services/ecommerce/getCategories";
 
 const Navigation = () => {
+    const [categories, setCategories] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        getCategories().then((res) => {setCategories(res)}).catch(err => setError(err)).finally(setLoading(false));
+    }, []);
+
     return (
         <>
-           <CategoryNavbar />
+            {loading && <p className="text-center">Loading...</p>}
+           <CategoryNavbar categories={categories} />
         </>
     );
 };
