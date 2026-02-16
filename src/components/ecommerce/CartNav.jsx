@@ -66,32 +66,36 @@ const CartNav = () => {
     if (loading) return <div className="p-4">Loading..</div>;
 
     return (
-        <nav className="flex flex-col md:flex-row justify-between px-6">
-            <div className="">
-                <div className="flex-shrink-0">
-                    <Link href="/" >
-                        <Image
-                            src={`${config.publicPath}/${siteLogo}`}
-                            width={120}
-                            height={40}
-                            alt="logo"
-                            priority
-                        />
-                    </Link>
-                </div>
+        <nav className="flex flex-col md:flex-row md:items-center md:justify-between px-6 py-4 gap-4">
+
+            {/* Logo */}
+            <div className="flex items-center">
+                <Link href="/">
+                    <Image
+                        src={`${config.publicPath}/${siteLogo}`}
+                        width={120}
+                        height={40}
+                        alt="logo"
+                        priority
+                        className="object-contain"
+                    />
+                </Link>
             </div>
 
-            <div className="">
+            {/* Search + Actions */}
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
                 <SearchInput />
-                <div className="flex  mt-6 gap-4">
-                    <ShoppingCart/>
-                    <MyWishList/>
-                    <MyAccount/>
+
+                <div className="flex items-center gap-4">
+                    <ShoppingCart />
+                    <MyWishList />
+                    <MyAccount />
                 </div>
             </div>
 
         </nav>
     );
+
 };
 
 export default CartNav;
