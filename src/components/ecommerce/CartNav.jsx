@@ -67,13 +67,13 @@ const CartNav = () => {
 
     return (
         <nav className="flex flex-col md:flex-row justify-between px-6">
-            <div className="">
+            <div className="mt-6">
                 <div className="flex-shrink-0">
                     <Link href="/" >
                         <Image
                             src={`${config.publicPath}/${siteLogo}`}
-                            width={120}
-                            height={40}
+                            width={200}
+                            height={60}
                             alt="logo"
                             priority
                         />
