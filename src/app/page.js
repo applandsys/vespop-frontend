@@ -14,10 +14,10 @@ export default function Home() {
                 <div className="mt-[-10px]" >
                     <ImgSlider/>
                 </div>
-                <div className="mx-2">
+                <div className="mx-4">
                     <CategoryCarousel/>
                 </div>
-                <div className="mt-8 mx-2">
+                <div className="mx-4">
                     <ProductList/>
                 </div>
             </EcommerceFrontLayout>

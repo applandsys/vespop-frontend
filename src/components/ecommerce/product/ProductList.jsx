@@ -40,13 +40,13 @@ const ProductList = ({headLine}) => {
 
                 <div className="w-full py-10">
                     <div className="flex items-center justify-center gap-6">
-                        <span className="h-px w-32 bg-black"></span>
+                        <span className="h-px w-32  xs:w-16 bg-black"></span>
 
                         <h2 className="text-sm font-semibold tracking-widest uppercase">
                             New Arrivals
                         </h2>
 
-                        <span className="h-px w-32 bg-black"></span>
+                        <span className="h-px w-32 xs:w-16  bg-black"></span>
                     </div>
 
                     <div className="mt-3 flex justify-center">
