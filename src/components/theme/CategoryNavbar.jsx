@@ -36,7 +36,14 @@ export default function CategoryNavbar({ categories = [] }) {
 
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex items-center gap-8">
-
+                        <li>
+                            <Link
+                                href="/"
+                                className="font-medium text-white hover:text-gray-300 transition flex items-center gap-1"
+                            >
+                                Home
+                            </Link>
+                        </li>
                         {categoryTree.map((parent) => (
                             <li
                                 key={parent.id}
