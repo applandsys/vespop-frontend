@@ -5,7 +5,6 @@ import {fetchFeaturedProducts, fetchProductsBySlug} from "@/services/ecommerce/G
 import ProductGridCard from "@/components/ecommerce/product/ProducGridCard";
 
 const ProductList = ({headLine}) => {
-
     const [featuredProduct, setFeaturedProduct] = useState([]);
     const [hotProducts, setHotProducts] = useState([]);
     const [mostPopular, setMostPopular] = useState([]);
@@ -20,9 +19,9 @@ const ProductList = ({headLine}) => {
             .finally(() => setLoading(false));
 
         fetchProductsBySlug('hot-products')
-            .then((data) => setHotProducts(data))
-            .catch((error) => setError(error))
-            .finally(() => setLoading(false));
+        .then((data) => setHotProducts(data))
+        .catch((error) => setError(error))
+        .finally(() => setLoading(false));
 
         fetchProductsBySlug('most-popular')
             .then((data) => setMostPopular(data))
@@ -32,35 +31,37 @@ const ProductList = ({headLine}) => {
     }, []);
 
 
-
     if (loading) return <div className="p-4">Loading products...</div>;
     if (error) return <div className="p-4 text-red-500">Error: {error.message || error}</div>;
 
     return (
-        <div className=" mt-4">
+        <div className="mt-4">
             <div className="mt-4">
-                <h2>Featured Products</h2>
-                <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {featuredProduct.map((product) => (
-                        <ProductGridCard key={product.id || product.slug} product={product} /> // ✅ key added
-                    ))}
-                </div>
-            </div>
 
-            <div className="mt-4">
-                <h2>Hot Products</h2>
-                <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {hotProducts.map((product) => (
-                        <ProductGridCard key={product.id || product.slug} product={product} /> // ✅ key added
-                    ))}
-                </div>
-            </div>
+                <div className="w-full py-10">
+                    <div className="flex items-center justify-center gap-6">
+                        <span className="h-px w-32 bg-black"></span>
 
-            <div className="mt-4">
-                <h2>Most Popular</h2>
-                <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {mostPopular.map((product) => (
-                        <ProductGridCard key={product.id || product.slug} product={product} /> // ✅ key added
+                        <h2 className="text-sm font-semibold tracking-widest uppercase">
+                            New Arrivals
+                        </h2>
+
+                        <span className="h-px w-32 bg-black"></span>
+                    </div>
+
+                    <div className="mt-3 flex justify-center">
+                        <a
+                            href="#"
+                            className="text-sm text-gray-700 underline underline-offset-4 hover:text-black"
+                        >
+                            View All
+                        </a>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
+                    {featuredProduct && featuredProduct.map((product) => (
+                        <ProductGridCard key={product.id || product.slug} product={product} />
                     ))}
                 </div>
             </div>
