@@ -107,22 +107,22 @@ const ProductGridCard = ({ product }) => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="absolute top-1 right-1 z-10 flex flex-col gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-2 right-1 z-10 flex flex-col gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <button
                         onClick={handleWishlist}
-                        className="bg-white p-0.5 rounded-full shadow-sm hover:bg-gray-50 transition-colors"
+                        className="bg-white p-0.5 my-1  rounded-full shadow-sm hover:bg-gray-50 transition-colors"
                     >
                         {isWishlisted ? (
-                            <HeartSolid className="h-2 w-2 text-red-500" />
+                            <HeartSolid className="h-6 w-6 text-red-500" />
                         ) : (
-                            <HeartIcon className="h-2 w-2 text-gray-600" />
+                            <HeartIcon className="h-6 w-6 text-gray-600" />
                         )}
                     </button>
                     <button
                         onClick={handleQuickView}
-                        className="bg-white p-0.5 rounded-full shadow-sm hover:bg-gray-50 transition-colors"
+                        className="bg-white p-0.5 my-1 rounded-full shadow-sm hover:bg-gray-50 transition-colors"
                     >
-                        <EyeIcon className="h-2 w-2 text-gray-600" />
+                        <EyeIcon className="h-6 w-6 text-gray-600" />
                     </button>
                 </div>
 
@@ -163,75 +163,98 @@ const ProductGridCard = ({ product }) => {
                         )}
 
                         {/* ADD TO CART Button */}
+                        {/* ADD TO CART Button */}
                         <div
-                            className={`absolute bottom-3 left-0 right-0 transition-all duration-500 transform ${
+                            className={`absolute bottom-0 left-0 right-0 w-full transition-all duration-500 transform ${
                                 isHovered ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
                             }`}
                         >
-                            <div className="flex justify-center">
-                                <button
-                                    onClick={handleAddToCart}
-                                    onMouseEnter={() => setIsButtonHovered(true)}
-                                    onMouseLeave={() => setIsButtonHovered(false)}
-                                    className="py-2 px-3 rounded-full font-semibold active:scale-95 transition-all duration-300 flex items-center justify-center gap-1.5 shadow transform hover:scale-105 text-[11px] bg-white text-black hover:bg-black hover:text-white"
-                                    style={{ width: "75%" }}
-                                >
-                                    <ShoppingCartIcon className="h-3 w-3" />
-                                    <span>Add to Cart</span>
-                                </button>
-                            </div>
+                            <button
+                                onClick={handleAddToCart}
+                                onMouseEnter={() => setIsButtonHovered(true)}
+                                onMouseLeave={() => setIsButtonHovered(false)}
+                                className="
+      w-full
+      h-10
+      border-t border-black
+      font-semibold
+      active:scale-95
+      transition-all
+      duration-300
+      flex
+      items-center
+      justify-center
+      gap-1.5
+      text-[11px]
+      bg-white
+      text-black
+      hover:bg-black
+      hover:text-white
+    "
+                            >
+                                <ShoppingCartIcon className="h-6 w-6" />
+                                <span className="text-xl font-bold tracking-wide">QUICK ADD</span>
+                            </button>
                         </div>
+
                     </div>
                 </Link>
             </div>
 
             {/* Product Info */}
-            <div className="space-y-0.5 pt-2">
+            <div className="space-y-0.5 pt-2 text-center">
                 {/* Product Name */}
                 <Link href={`/product/detail/${slug}`}>
-                    <h3 className="font-medium text-gray-900 hover:text-red-600 transition-colors line-clamp-2 text-[14px] leading-tight">
+                    <h3 className="font-thin text-gray-900 hover:text-red-600 transition-colors line-clamp-2 text-[14px] leading-tight mx-auto">
                         {name}
                     </h3>
                 </Link>
 
                 {/* Price */}
-                <div className="flex items-center gap-1">
-          <span className="text-[14px] font-bold text-gray-900">
-            {(discountPrice || sellPrice)?.toFixed(2)}
-          </span>
+                <div className="flex justify-center font-bold text-md items-center gap-1">
+                        <span className="text-[14px] text-gray-900">
+                          Tk. {(discountPrice || sellPrice)?.toFixed(2)}
+                        </span>
+
                     {discount > 0 && (
                         <span className="text-[14px] text-gray-500 line-through">
-              {sellPrice?.toFixed(2)}
-            </span>
+                        Tk.  {sellPrice?.toFixed(2)}
+                      </span>
                     )}
                 </div>
 
                 {/* Category */}
-                <div className="flex items-center justify-between">
-                    <p className="text-gray-500 text-[7px]">{category}</p>
+                <div className="flex justify-center">
+                    <p className="text-gray-500 text-[7px]">
+                        {category}
+                    </p>
                 </div>
 
-                {/* Rating - Made larger */}
-                <div className="flex items-center gap-1">
-                    <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                            <svg
-                                key={i}
-                                className={`h-3 w-3 ${
-                                    i < Math.floor(rating || 0) ? "text-yellow-400" : "text-gray-300"
-                                }`}
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                        ))}
-                    </div>
-                    <span className="text-[14px] text-gray-500">
-        ({rating?.toFixed(1) || "0.0"})
-                </span>
-                </div>
+                {/* Rating */}
+    {/*            <div className="flex flex-col items-center gap-0.5">*/}
+    {/*                <div className="flex justify-center">*/}
+    {/*                    {[...Array(5)].map((_, i) => (*/}
+    {/*                        <svg*/}
+    {/*                            key={i}*/}
+    {/*                            className={`h-3 w-3 ${*/}
+    {/*                                i < Math.floor(rating || 0)*/}
+    {/*                                    ? "text-yellow-400"*/}
+    {/*                                    : "text-gray-300"*/}
+    {/*                            }`}*/}
+    {/*                            fill="currentColor"*/}
+    {/*                            viewBox="0 0 20 20"*/}
+    {/*                        >*/}
+    {/*                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />*/}
+    {/*                        </svg>*/}
+    {/*                    ))}*/}
+    {/*                </div>*/}
+
+    {/*                <span className="text-[14px] text-gray-500">*/}
+    {/*  ({rating?.toFixed(1) || "0.0"})*/}
+    {/*</span>*/}
+    {/*            </div>*/}
             </div>
+
         </div>
     );
 };
