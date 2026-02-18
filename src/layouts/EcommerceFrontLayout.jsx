@@ -4,6 +4,7 @@ import { ReduxProvider } from '@/providers/ReduxProvider';
 import Footer from "@/components/theme/Footer";
 import Header from "@/components/layouts/Header";
 import {SnackbarProvider} from "@/components/ui/SnackbarProvider";
+import MobileBottomNav from "@/components/theme/MobileBottomNav";
 
 export const metadata = {
     title: "Ecommerce Website ",
@@ -20,6 +21,8 @@ export default function EcommerceFrontLayout({ children }) {
                         {children}
                     </main>
                     <Footer/>
+                    {/* MOBILE BOTTOM NAV */}
+                    <MobileBottomNav/>
                 </SnackbarProvider>
             </ReduxProvider>
         </div>
