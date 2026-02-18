@@ -34,31 +34,30 @@ export default function CategoryCarousel() {
 
     return (
         <section className="max-w-7xl mx-auto px-4 py-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {categories.filter(item => item.hasLocation === true).map((item, index) => (
-                    <Link href={`/category/${item.slug}`}
-                        key={index}
-                        className="relative group overflow-hidden "
-                    >
-                        {/* Image */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {categories
+                    .filter(item => item.hasLocation === true)
+                    .map((item, index) => (
+                        <Link
+                            href={`/category/${item.slug}`}
+                            key={index}
+                            className="relative group overflow-hidden"
+                        >
+                            <Image
+                                src={`${config.publicPath}/images/categories/${item.image}`}
+                                alt={item.name}
+                                width={600}
+                                height={600}
+                                className="w-full h-[160px] md:h-[260px] object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
 
-                        <Image
-                            src={`${config.publicPath}/images/categories/${item.image}`}
-                            alt={item.name}
-                            width={600}
-                            height={600}
-                            className="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-
-
-                        {/* Overlay */}
-                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition flex items-center justify-center">
-                            <h3 className="text-white text-xl font-semibold tracking-widest uppercase">
-                                {item.name}
-                            </h3>
-                        </div>
-                    </Link>
-                ))}
+                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition flex items-center justify-center">
+                                <h3 className="text-white text-sm md:text-xl font-semibold tracking-widest uppercase text-center px-2">
+                                    {item.name}
+                                </h3>
+                            </div>
+                        </Link>
+                    ))}
             </div>
         </section>
     );
