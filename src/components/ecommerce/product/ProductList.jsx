@@ -18,22 +18,18 @@ const ProductList = ({headLine}) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-
         fetchFeaturedProducts()
             .then((data) => setFeaturedProduct(data))
             .catch((error) => setError(error))
             .finally(() => setLoading(false));
-
         fetchProductsBySlug('hot-products')
         .then((data) => setHotProducts(data))
         .catch((error) => setError(error))
         .finally(() => setLoading(false));
-
         fetchProductsBySlug('most-popular')
             .then((data) => setMostPopular(data))
             .catch((error) => setError(error))
             .finally(() => setLoading(false));
-
     }, []);
 
     useEffect(() => {
@@ -54,8 +50,6 @@ const ProductList = ({headLine}) => {
 
     if (loading) return <div className="p-4">Loading ...</div>;
 
-
-    if (loading) return <div className="p-4">Loading products...</div>;
     if (error) return <div className="p-4 text-red-500">Error: {error.message || error}</div>;
 
     return (
