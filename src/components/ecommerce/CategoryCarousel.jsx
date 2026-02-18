@@ -1,10 +1,8 @@
 "use client";
 
 import config from '@/config';
-import React, {useEffect, useRef, useState} from "react";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/16/solid";
+import React, {useEffect,  useState} from "react";
 import Image from "next/image";
-import clsx from 'clsx';
 import {getCategories} from "@/services/ecommerce/getCategories";
 import Link from "next/link";
 
@@ -17,6 +15,22 @@ export default function CategoryCarousel() {
     useEffect(() => {
         getCategories().then((res) => {setCategories(res)}).catch(error => setError(error)).finally(setLoading(false));
     }, []);
+
+    if (loading) {
+        return (
+            <p className="text-center mt-10 text-gray-600">
+                Loading order details...
+            </p>
+        );
+    }
+
+    if (error) {
+        return (
+            <p className="text-center mt-10 text-gray-600">
+                {JSON.stringify(error)}
+            </p>
+        );
+    }
 
     return (
         <section className="max-w-7xl mx-auto px-4 py-10">
