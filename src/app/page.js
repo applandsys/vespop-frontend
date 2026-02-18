@@ -17,7 +17,7 @@ export default function Home() {
                 <div className="mx-4">
                     <CategoryCarousel/>
                 </div>
-                <div className="mx-4">
+                <div className="">
                     <ProductList/>
                 </div>
             </EcommerceFrontLayout>
