@@ -54,6 +54,17 @@
     ]
   },
   {
+    "section": "Site CMS",
+    "icon": "FaSitemap",
+    "items": [
+      {
+        "name": "Manage Posts",
+        "icon": "HiTag",
+        "href": "/admin/site-posts"
+      }
+    ]
+  },
+  {
     "section": "Setting",
     "icon": "HiCog",
     "items": [

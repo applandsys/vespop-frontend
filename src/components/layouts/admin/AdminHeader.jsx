@@ -21,7 +21,7 @@ const AdminHeader = () => {
         // Dispatch Redux logout
         dispatch(clearLoginData());
 
-        // Redirect to login page
+        // Redirect to login site-posts
         router.push('/auth/login');
     };
 

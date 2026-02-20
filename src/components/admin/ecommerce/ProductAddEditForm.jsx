@@ -353,7 +353,7 @@ const ProductAddEditForm = ({ productId }) => {
             if (response.ok) {
                 alert(productId ? 'Product updated successfully' : 'Product added successfully');
                 resetForm();
-                router.push('/admin/product/product-list'); // Redirect to the product list page
+                router.push('/admin/product/product-list'); // Redirect to the product list site-posts
             } else {
                 alert('Error occurred while saving the product');
             }
