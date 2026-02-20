@@ -3,6 +3,7 @@
 import Image from "next/image";
 import {usePathname} from "next/navigation";
 import React from "react";
+import Link from "next/link";
 
 export default function Footer (){
     const pathname = usePathname();
@@ -59,10 +60,10 @@ export default function Footer (){
                         <div>
                             <div className="text-gray-400 font-thin mb-4">Legal</div>
                             <div className="space-y-2 text-sm text-gray-600">
-                                <p><a href="#" className="hover:underline">Terms & Conditions</a></p>
-                                <p><a href="#" className="hover:underline">Privacy Policy</a></p>
-                                <p><a href="#" className="hover:underline">Shopping & Return</a></p>
-                                <p><a href="#" className="hover:underline">Help Center</a></p>
+                                <p><Link href="/pages/terms-contidion" className="hover:underline">Terms & Conditions</Link></p>
+                                <p><Link href="/pages/privacy-policy" className="hover:underline">Privacy Policy</Link></p>
+                                <p><Link href="/pages/shopping-return" className="hover:underline">Shopping & Return</Link></p>
+                                <p><Link href="/pages/help-center" className="hover:underline">Help Center</Link></p>
                             </div>
                         </div>
 
@@ -96,7 +97,7 @@ export default function Footer (){
                                     key={i}
                                     width={35}
                                     height={35}
-                                    src={`images/icons/icon${i + 1}.svg`}
+                                    src={`/images/icons/icon${i + 1}.svg`}
                                     alt={`payment-${i + 1}`}
                                     className="h-7 w-auto"
                                 />

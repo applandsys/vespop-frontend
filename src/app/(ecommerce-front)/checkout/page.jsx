@@ -2,7 +2,7 @@ import React from "react";
 import Breadcrumb from "@/components/ecommerce/BreadChrumb";
 import Checkout from "@/components/ecommerce/Checkout";
 
-export default function Home() {
+export default function CheckOutPage() {
 
     const breadcrumbItems = [
         { label: "Home", href: "/" },
