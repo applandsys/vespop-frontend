@@ -42,7 +42,7 @@ export async function fetchProductDetail(slug) {
 
     const contentType = res.headers.get("content-type") || "";
 
-    // If backend sent HTML (error page/redirect), don't try to parse JSON
+    // If backend sent HTML (error site-posts/redirect), don't try to parse JSON
     if (!res.ok) {
         const body = await res.text();
         throw new Error(

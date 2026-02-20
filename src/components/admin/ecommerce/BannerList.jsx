@@ -52,7 +52,7 @@ const BannerList = ({banners}) => {
 
 
     const handleEdit = (bannerId) => {
-        // Navigate to the form page to update the banner
+        // Navigate to the form site-posts to update the banner
         router.push(`/admin/banner-setting/${bannerId}`);
     };
 
