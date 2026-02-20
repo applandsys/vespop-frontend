@@ -2,12 +2,28 @@
 
 import Image from "next/image";
 import {usePathname} from "next/navigation";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
+import {fetchSettingData} from "@/services/site/SettingData";
 
 export default function Footer (){
     const pathname = usePathname();
     const hasWord = pathname.includes('admin');
+
+    const [siteSetting, setSiteSetting] = useState([]);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    // Close dropdown if clicked outside
+    useEffect(() => {
+        fetchSettingData().then((json) => {
+            if (json.success) {
+                setSiteSetting(json.data);
+            }
+        }).catch(error => setError(error)
+        ).finally(setLoading(false));
+    }, []);
+
 
     return (
         <>
@@ -71,12 +87,12 @@ export default function Footer (){
                         <div>
                             <div className="text-gray-400 font-thin mb-4">Bangladesh</div>
                             <div className="text-sm text-gray-600 space-y-2">
+                                <div className="text-sm font-medium">{siteSetting.site_name}</div>
                                 <p>
-                                    Sky Scrapper (9th Floor), 20 & 50, Kamal Ataturk Avenue,
-                                    Banani C/A, Dhaka-1213
+                                    {siteSetting.address}
                                 </p>
-                                <p>customer@vespop.com</p>
-                                <p>+880178899900, +8801982333111</p>
+                                <p>{siteSetting.email}</p>
+                                <p>{siteSetting.phone}</p>
                             </div>
                         </div>
 

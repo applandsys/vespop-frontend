@@ -3,6 +3,7 @@
 import React, {useEffect, useState} from "react";
 import config from "@/config";
 import CommonCard from "@/components/ui/CommonCard";
+import Editor from "react-simple-wysiwyg";
 
 const SiteSettingForm = ({postId}) => {
     const [formData, setFormData] = useState({
@@ -76,13 +77,11 @@ const SiteSettingForm = ({postId}) => {
         <CommonCard title="Site Settings">
             <form
                 onSubmit={handleSubmit}
-                className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2"
+                className="grid grid-cols-1 gap-5 p-2 w-full"
             >
-                {/* Site Name */}
-                <div>
-                    <label className="block text-sm font-medium mb-1">
-                       Title
-                    </label>
+                {/* Title */}
+                <div className="w-full">
+                    <label className="block text-sm font-medium mb-1">Title</label>
                     <input
                         type="text"
                         name="title"
@@ -93,8 +92,8 @@ const SiteSettingForm = ({postId}) => {
                     />
                 </div>
 
-                {/* Description */}
-                <div>
+                {/* Excerpt */}
+                <div className="w-full">
                     <label className="block text-sm font-medium mb-1">
                         Excerpt (Brief Description)
                     </label>
@@ -107,24 +106,24 @@ const SiteSettingForm = ({postId}) => {
                     />
                 </div>
 
-                {/* Description */}
-                <div>
+                {/* Content */}
+                <div className="w-full">
                     <label className="block text-sm font-medium mb-1">
-                       Detail Description
+                        Detail Description
                     </label>
-                    <textarea
-                        name="content"
-                        rows="4"
-                        value={formData.content}
-                        onChange={handleChange}
-                        className="w-full border rounded-lg px-3 py-2"
-                    />
+
+                    <div className="w-full">
+                        <Editor
+                            name="content"
+                            value={formData.content}
+                            onChange={handleChange}
+                            containerProps={{ className: "w-full" }}
+                        />
+                    </div>
                 </div>
 
-
                 {/* Featured Image */}
-                {/* Featured Image */}
-                <div className="md:col-span-2">
+                <div className="w-full">
                     <label className="block text-sm font-medium mb-1">
                         Featured Image
                     </label>
@@ -134,10 +133,9 @@ const SiteSettingForm = ({postId}) => {
                         name="featuredImage"
                         accept="image/*"
                         onChange={handleChange}
-                        className="block w-full text-sm text-gray-500"
+                        className="w-full border rounded-lg px-3 py-2"
                     />
 
-                    {/* Preview */}
                     {imagePreview && (
                         <div className="mt-4">
                             <img
@@ -150,11 +148,11 @@ const SiteSettingForm = ({postId}) => {
                 </div>
 
                 {/* Submit */}
-                <div className="md:col-span-2 flex justify-end">
+                <div className="w-full flex justify-end">
                     <button
                         type="submit"
                         disabled={submitting}
-                        className={`px-6 py-2 rounded-lg text-white ${
+                        className={`px-6 py-3 rounded-lg text-white ${
                             submitting
                                 ? "bg-gray-400"
                                 : "bg-blue-500 hover:bg-blue-400"

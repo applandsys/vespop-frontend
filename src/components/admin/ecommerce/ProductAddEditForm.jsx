@@ -14,7 +14,6 @@ import ProductAttributes from "@/components/admin/ecommerce/ProductAttributes";
 import {fetchAllocations} from "@/services/ecommerce/fetchLocations";
 import {fetchAllProductBrand} from "@/services/ecommerce/ProductBrand";
 import { useRouter } from 'next/navigation';
-// import {router} from "next/client";
 
 const ProductAddEditForm = ({ productId }) => {
     const router = useRouter();  // Initialize the router
