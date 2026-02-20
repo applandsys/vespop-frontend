@@ -38,7 +38,6 @@ const CartList = () => {
 
     return (
         <>
-            <h1 className="text-3xl font-bold font-quicksand">Your Cart</h1>
             <div className="text-gray-500 flex justify-between w-full">
                 <div className="text-xs font-light text-gray-600 tracking-wide">
                     There {totalItems === 1 ? "is" : "are"} {totalItems}{" "}

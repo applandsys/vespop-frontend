@@ -5,10 +5,7 @@ import Link from "next/link";
 import {UserIcon} from "@heroicons/react/16/solid";
 import {HomeIcon, PowerIcon} from "@heroicons/react/24/outline";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchSettingData} from "@/services/site/SettingData";
-import {getCategories} from "@/services/ecommerce/getCategories";
 import {clearLoginData} from "@/redux/store/slices/authSlice";
-import {router} from "next/dist/client";
 import {useRouter} from "next/navigation";
 
 const MyAccount = () => {
@@ -65,9 +62,9 @@ const MyAccount = () => {
                             className="flex items-center cursor-pointer group"
                         >
                             <UserIcon className="h-5 w-5 lg:h-6 lg:w-6 text-gray-600 group-hover:text-blue-600 transition-colors"/>
-                            <button className="hover:text-blue-600 flex items-center">
-                                <span className="ml-2 hidden sm:block text-sm lg:text-base">Account</span>
-                            </button>
+                            <div className="hover:text-blue-600 flex items-center">
+                                <span className="ml-2 hidden sm:block text-xs">Account</span>
+                            </div>
                         </div>
 
                         {isOpen && (
