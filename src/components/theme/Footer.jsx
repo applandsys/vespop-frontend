@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import {usePathname} from "next/navigation";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
+import {fetchSettingData} from "@/services/site/SettingData";
 
 export default function Footer (){
     const pathname = usePathname();
