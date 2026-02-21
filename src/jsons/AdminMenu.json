@@ -58,9 +58,14 @@
     "icon": "FaSitemap",
     "items": [
       {
-        "name": "Manage Posts",
+        "name": "Create Posts",
         "icon": "HiTag",
         "href": "/admin/site-posts"
+      },
+      {
+        "name": "Manage Posts",
+        "icon": "HiTag",
+        "href": "/admin/site-posts/list"
       }
     ]
   },

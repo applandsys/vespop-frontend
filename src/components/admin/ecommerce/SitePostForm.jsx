@@ -4,8 +4,14 @@ import React, {useEffect, useState} from "react";
 import config from "@/config";
 import CommonCard from "@/components/ui/CommonCard";
 import Editor from "react-simple-wysiwyg";
+import {fetchSitePostById} from "@/services/admin/getSitePost";
 
 const SiteSettingForm = ({postId}) => {
+
+    const [imagePreview, setImagePreview] = useState(null);
+    const [submitting, setSubmitting] = useState(false);
+
+
     const [formData, setFormData] = useState({
         title: "",
         excerpt: "",
@@ -16,8 +22,22 @@ const SiteSettingForm = ({postId}) => {
         categoryId: ""
     });
 
-    const [imagePreview, setImagePreview] = useState(null);
-    const [submitting, setSubmitting] = useState(false);
+    useEffect(() => {
+        fetchSitePostById(postId).then(response => {
+            setFormData({
+                ...formData,
+                title: response.post.title,
+                excerpt: response.post.excerpt,
+                content: response.post.content,
+                featuredImage: response.post.featuredImage,
+                id: response.post.id
+            });
+            // Optional: show existing image
+            if (response.post.featuredImage) {
+                setImagePreview(`${config.publicPath}/images/site-post/${response.post.featuredImage}`);
+            }
+        })
+    }, [postId]);
 
     useEffect(() => {
         return () => {
@@ -45,29 +65,35 @@ const SiteSettingForm = ({postId}) => {
         setSubmitting(true);
 
         const form = new FormData();
+
         Object.entries(formData).forEach(([key, value]) => {
             if (key === "featuredImage") {
                 if (value) form.append("featuredImage", value);
             } else {
-                form.append(key, value);
+                form.append(key, value ?? "");
             }
         });
 
+        // 🔥 Decide method & URL
+        const isEdit = !!postId;
+
+        const method = isEdit ? "PUT" : "POST";
+
         try {
-            const res = await fetch(
-                `${config.apiBaseUrl}/admin/site-post`,
-                {
-                    method: "POST",
-                    body: form,
-                }
-            );
+            const res = await fetch(`${config.apiBaseUrl}/admin/site-post`, {
+                method,
+                body: form,
+            });
 
             const json = await res.json();
+
             if (!json.success) {
-                console.error("Update failed");
+                console.error("Save failed");
+            } else {
+                console.log("Saved successfully");
             }
         } catch (error) {
-            console.error("Update error", error);
+            console.error("Save error", error);
         } finally {
             setSubmitting(false);
         }
