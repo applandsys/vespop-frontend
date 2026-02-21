@@ -66,7 +66,7 @@ const CartNav = () => {
     if (loading) return <div className="p-4">Loading..</div>;
 
     return (
-        <nav className="flex flex-col md:flex-row justify-between px-6">
+        <nav className="flex flex-col md:flex-row justify-between px-8 mx-8">
             <div className="mt-4">
                 <div className="flex-shrink-0">
                     <Link href="/" >
@@ -83,7 +83,7 @@ const CartNav = () => {
 
             <div className="">
                 <SearchInput />
-                <div className="flex  mt-6 gap-4">
+                <div className="flex  justify-end mt-6 gap-4">
                     <ShoppingCart/>
                     <MyWishList/>
                     <MyAccount/>
