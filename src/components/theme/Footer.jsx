@@ -37,10 +37,10 @@ export default function Footer (){
                     </div>
                 </footer>
             ) : (
-                <footer className="mx-auto mt-12 px-4">
+                <footer className="mx-auto mt-12 px-8 mx-8">
 
                     {/* TOP SECTION */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:mx-8">
 
                         {/* Column 1 — Navigate */}
                         <div>
