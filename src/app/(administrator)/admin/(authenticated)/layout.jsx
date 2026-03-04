@@ -1,24 +1,56 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
+
 import AdminSidebar from "@/components/admin/AdminSidebar";
 import AdminHeader from "@/components/layouts/admin/AdminHeader";
+import {ToastContainer} from "react-toastify";
 
 export default function AdminLayout({ children }) {
+    const router = useRouter();
+    const { token } = useSelector((state) => state.auth);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    useEffect(() => {
+        if (!token) {
+            router.replace("/admin");
+        }
+    }, [token, router]);
+
+    if (!token) return null;
 
     return (
-            <>
-                <div className="flex h-screen w-full">
-                    <div className="w-64">
-                        <AdminSidebar />
-                    </div>
-                    <div className="flex flex-col flex-1">
-                        <AdminHeader />
-                        <div className="flex-1 overflow-y-auto">
-                            {children}
-                        </div>
-                    </div>
-                </div>
-            </>
+        <div className="flex h-screen w-full overflow-hidden">
+            <div
+                className={`
+            fixed md:relative inset-y-0 left-0 z-40 w-64 bg-white
+            transform transition-transform duration-300
+            ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+            md:translate-x-0
+        `}
+            >
+                <AdminSidebar closeSidebar={() => setSidebarOpen(false)} />
+            </div>
+
+            {/* Overlay */}
+            {sidebarOpen && (
+                <div
+                    className="fixed inset-0 bg-black/40 z-30 md:hidden"
+                    onClick={() => setSidebarOpen(false)}
+                />
+            )}
+
+            {/* Main */}
+            <div className="flex flex-col flex-1">
+                <AdminHeader onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+                <main className="flex-1 p-6">
+                    {children}
+                    <ToastContainer />
+                </main>
+            </div>
+        </div>
 
     );
 }

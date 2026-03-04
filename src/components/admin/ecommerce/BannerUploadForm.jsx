@@ -3,6 +3,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import config from "@/config"; // You may need this to get the ID from the URL
 import { useRouter } from 'next/navigation';
+import {toast} from "react-toastify";
 
 const BannerUploadForm = ({ bannerId, getBanners }) => {
 
@@ -101,6 +102,7 @@ const BannerUploadForm = ({ bannerId, getBanners }) => {
 
             setBannerPreview(null);
             setSuccessMessage("Banner saved successfully!");
+            toast.success("Banner Added successfully!");
 
             // Reset file input
             if (fileInputRef.current) {

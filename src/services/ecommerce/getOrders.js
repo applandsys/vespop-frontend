@@ -1,11 +1,9 @@
-
 import config from "@/config";
 
-export const getOrders = async () => {
-    const res = await fetch(`${config.apiBaseUrl}/admin/order/list`);
+export const getOrders = async ({type}) => {
+    const res = await fetch(`${config.apiBaseUrl}/admin/order/list?type=${type}`);
     if (!res.ok) throw new Error('Failed to fetch orders');
-    const data = await res.json();
-    return data;
+    return await res.json();
 };
 
 

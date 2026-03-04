@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 import { Grid } from "gridjs-react";
 import { html } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
+import { h } from "gridjs";
 
 import { getOrders } from "@/services/ecommerce/getOrders";
 import config from "@/config";
 
-const AllOrders = () => {
+const AllOrders = ({type}) => {
 
     const [orders, setOrders] = useState([]);
     const [fraudResult, setFraudResult] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [loadingFraud, setLoadingFraud] = useState(false);
 
-
     useEffect(() => {
-        getOrders()
+        getOrders(type)
             .then(r => setOrders(r.data))
             .catch(console.error);
     }, []);
@@ -51,7 +51,6 @@ const AllOrders = () => {
             setLoadingFraud(false);
         }
     };
-
 
 
     // 👇 event delegation

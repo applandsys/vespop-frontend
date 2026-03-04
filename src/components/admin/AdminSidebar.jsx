@@ -17,10 +17,10 @@ const AdminSidebar = () => {
 
 
     return (
-        <div className="p-1 space-y-1 border-r border-r-green-300">
-            <div className="text-xl font-bold p-[6px]">BrandName</div>
+        <div className="h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-green-400 scrollbar-track-gray-100">
+            <div className="fixed bg-white h-12 w-full text-xl font-bold p-[6px]">BrandName</div>
             <hr />
-            <div className="space-y-1">
+            <div className="space-y-1 mt-12">
                 {AdminMenu.map((menuItem) => (
                     menuItem.items.length === 0 ? (
                         <Link
