@@ -3,9 +3,9 @@ import {ReduxProvider} from "@/providers/ReduxProvider";
 export default function AdminRootLayout({ children }) {
     return (
         <ReduxProvider>
-       <div>
-           {children}
-       </div>
+           <div>
+               {children}
+           </div>
         </ReduxProvider>
     );
 }

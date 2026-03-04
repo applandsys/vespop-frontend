@@ -6,9 +6,10 @@ import TableData from "@/components/ui/TableData";
 import Image from "next/image";
 import config from "@/config";
 import { useRouter } from 'next/navigation'
+import {toast} from "react-toastify";
 
 
-const BannerList = ({banners}) => {
+const BannerList = ({banners,getBanners}) => {
 
     const router = useRouter();
 
@@ -52,7 +53,7 @@ const BannerList = ({banners}) => {
 
 
     const handleEdit = (bannerId) => {
-        // Navigate to the form site-posts to update the banner
+        // Navigate to the form page to update the banner
         router.push(`/admin/banner-setting/${bannerId}`);
     };
 
@@ -67,14 +68,13 @@ const BannerList = ({banners}) => {
                 });
 
                 if (response.ok) {
-                    alert("Banner deleted successfully");
+                    toast.success("Banner Added successfully!");
                     getBanners();  // Refresh the banner list
                 } else {
-                    alert("Error deleting banner");
+                    toast.error("Error Deleting Banner!");
                 }
             } catch (error) {
-                console.error("Error deleting banner", error);
-                alert("Error deleting banner");
+                toast.error("Banner Error!");
             }
         }
     };

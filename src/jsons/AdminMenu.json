@@ -6,7 +6,7 @@
     "href": "/admin/dashboard"
   },
   {
-    "section": "Product",
+    "section": "Products",
     "icon": "FaProductHunt",
     "items": [
       {
@@ -20,11 +20,6 @@
         "href": "/admin/product/product-list"
       },
       {
-        "name": "Manage Category",
-        "icon": "HiTag",
-        "href": "/admin/product-category"
-      },
-      {
         "name": "Manage Brand",
         "icon": "HiCube",
         "href": "/admin/product-brand"
@@ -32,13 +27,93 @@
     ]
   },
   {
-    "section": "Order",
+    "section": "Categories",
+    "icon": "HiTag",
+    "items": [
+      {
+        "name": "All Categories",
+        "icon": "HiTag",
+        "href": "/admin/product-category"
+      },
+      {
+        "name": "Main Categories",
+        "icon": "HiTag",
+        "href": "/admin/product-category"
+      },
+      {
+        "name": "Sub Categories",
+        "icon": "HiTag",
+        "href": "/admin/product-category"
+      }
+    ]
+  },
+  {
+    "section": "Brands",
+    "icon": "HiCube",
+    "items": [
+      {
+        "name": "All Brands",
+        "icon": "HiCube",
+        "href": "/admin/product-brand"
+      }
+    ]
+  },
+  {
+    "section": "Suppliers",
+    "icon": "HiCube",
+    "items": [
+      {
+        "name": "All Suppliers",
+        "icon": "HiCube",
+        "href": "/admin/product-brand"
+      },
+      {
+        "name": "Due Payment",
+        "icon": "HiCube",
+        "href": "/admin/product-brand"
+      },
+      {
+        "name": "Paid Payment",
+        "icon": "HiCube",
+        "href": "/admin/product-brand"
+      }
+    ]
+  },
+  {
+    "section": "Purchase",
+    "icon": "HiCube",
+    "items": [
+      {
+        "name": "All Purchase",
+        "icon": "HiCube",
+        "href": "/admin/product-brand"
+      }
+    ]
+  },
+  {
+    "section": "Customers",
+    "icon": "FaUsersGear",
+    "items": [
+      {
+        "name": "All Customers",
+        "icon": "FaUsersGear",
+        "href": "/admin/order/list"
+      }
+    ]
+  },
+  {
+    "section": "Orders",
     "icon": "HiMap",
     "items": [
       {
-        "name": "Order List",
+        "name": "All Orders",
         "icon": "HiViewList",
         "href": "/admin/order/list"
+      },
+      {
+        "name": "Incomplete Order",
+        "icon": "HiViewList",
+        "href": "/admin/order/incomplete"
       }
     ]
   },
@@ -54,18 +129,62 @@
     ]
   },
   {
-    "section": "Site CMS",
+    "section": "Reviews",
+    "icon": "FaStar",
+    "items": [
+      {
+        "name": "Pending Reviews",
+        "icon": "HiTag",
+        "href": "/admin/inventory/stock"
+      },
+      {
+        "name": "Approved Reviews",
+        "icon": "HiTag",
+        "href": "/admin/inventory/stock"
+      }
+    ]
+  },
+  {
+    "section": "Banners & Promo",
+    "icon": "HiPhotograph",
+    "items": [
+      {
+        "name": "Manage Banners",
+        "icon": "HiPhotograph",
+        "href": "/admin/banner-setting"
+      }
+    ]
+  },
+  {
+    "section": "Reports",
+    "icon": "HiPhotograph",
+    "items": [
+      {
+        "name": "Manage Banners",
+        "icon": "HiPhotograph",
+        "href": "/admin/banner-setting"
+      }
+    ]
+  },
+  {
+    "section": "API Integration",
     "icon": "FaSitemap",
     "items": [
       {
-        "name": "Create Posts",
-        "icon": "HiTag",
-        "href": "/admin/site-posts"
-      },
+        "name": "Courier",
+        "icon": "HiTruck",
+        "href": "/admin/api-integration/courier"
+      }
+    ]
+  },
+  {
+    "section": "Activity Log",
+    "icon": "HiPhotograph",
+    "items": [
       {
-        "name": "Manage Posts",
-        "icon": "HiTag",
-        "href": "/admin/site-posts/list"
+        "name": "Manage Banners",
+        "icon": "HiPhotograph",
+        "href": "/admin/banner-setting"
       }
     ]
   },
