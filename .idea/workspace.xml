@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Feat-antigravity: Font size Fixed">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="false" />
+    <option name="myAllFileTypesSelected" value="true" />
+    <option name="mySelectedFileTypes">
+      <set />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;applandsys&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/applandsys/ecommerce-ptm.git&quot;,
+    &quot;accountId&quot;: &quot;a7bf4393-8635-4df0-92d7-c6986542926c&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="3GNRHGKAeM1YaqQ7YPwWOLrRga0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fix/dorjibari-front-claude-work&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/laragon/www/Ecommerce-PTM/Frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.24374.125" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Feat-Claude: claude did the color setting in admin">
+      <option name="closed" value="true" />
+      <created>1783779915760</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1783779915760</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Feat-Claude: claude did the color setting in admin" />
+      <created>1783809967604</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783809967604</updated>
+      <workItem from="1783809967605" duration="131000" />
+      <workItem from="1783946021668" duration="2994000" />
+      <workItem from="1783949560210" duration="296000" />
+      <workItem from="1783952696024" duration="445000" />
+      <workItem from="1783953328611" duration="2311000" />
+      <workItem from="1784010579440" duration="13955000" />
+      <workItem from="1784193572557" duration="3427000" />
+    </task>
+    <task id="LOCAL-00002" summary="Feat-Gemini: Delete Widget">
+      <option name="closed" value="true" />
+      <created>1783952716860</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1783952716860</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Feat-Gemini: Language page created">
+      <option name="closed" value="true" />
+      <created>1783953701626</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1783953701626</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Feat-Gemini: language setting added">
+      <option name="closed" value="true" />
+      <created>1783953941202</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1783953941202</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Feat-Gemini: Currecny Setting page complted">
+      <option name="closed" value="true" />
+      <created>1783954832984</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1783954832984</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Feat-antigravity: Shipping page ui">
+      <option name="closed" value="true" />
+      <created>1784011109674</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1784011109674</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Feat-antigravity: Visitor log and activity log">
+      <option name="closed" value="true" />
+      <created>1784013791632</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1784013791632</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Feat-antigravity: Courier Delete and api integration page done">
+      <option name="closed" value="true" />
+      <created>1784014559213</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1784014559213</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Feat-antigravity: Purchase return complete">
+      <option name="closed" value="true" />
+      <created>1784021834132</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1784021834132</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Feat-antigravity: Product list and add edit form with shadcn">
+      <option name="closed" value="true" />
+      <created>1784024445869</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1784024445869</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Feat-antigravity: UI complte for brand">
+      <option name="closed" value="true" />
+      <created>1784024733392</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1784024733392</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Feat-antigravity: Brand Page and Product add eidt form Shadcn">
+      <option name="closed" value="true" />
+      <created>1784025587450</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1784025587450</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Feat-antigravity: form">
+      <option name="closed" value="true" />
+      <created>1784032145944</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1784032145944</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Feat-antigravity: Review completed">
+      <option name="closed" value="true" />
+      <created>1784032806057</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1784032806057</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Feat-antigravity: Coupon and deal">
+      <option name="closed" value="true" />
+      <created>1784037122905</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1784037122905</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Feat-antigravity: Font size Fixed">
+      <option name="closed" value="true" />
+      <created>1784618966511</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1784618966511</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Feat-Claude: claude did the color setting in admin" />
+    <MESSAGE value="Feat-Gemini: Delete Widget" />
+    <MESSAGE value="Feat-Gemini: Language page created" />
+    <MESSAGE value="Feat-Gemini: language setting added" />
+    <MESSAGE value="Feat-Gemini: Currecny Setting page complted" />
+    <MESSAGE value="Feat-antigravity: Shipping page ui" />
+    <MESSAGE value="Feat-antigravity: Visitor log and activity log" />
+    <MESSAGE value="Feat-antigravity: Courier Delete and api integration page done" />
+    <MESSAGE value="Feat-antigravity: Purchase return complete" />
+    <MESSAGE value="Feat-antigravity: Product list and add edit form with shadcn" />
+    <MESSAGE value="Feat-antigravity: UI complte for brand" />
+    <MESSAGE value="Feat-antigravity: Brand Page and Product add eidt form Shadcn" />
+    <MESSAGE value="Feat-antigravity: form" />
+    <MESSAGE value="Feat-antigravity: Review completed" />
+    <MESSAGE value="Feat-antigravity: Coupon and deal" />
+    <MESSAGE value="Feat-antigravity: Font size Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat-antigravity: Font size Fixed" />
+  </component>
+</project>

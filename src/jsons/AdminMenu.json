@@ -1,0 +1,336 @@
+[
+  {
+    "section": "Dashboard",
+    "icon": "HiHome",
+    "items": [],
+    "href": "/admin/dashboard"
+  },
+  {
+    "section": "Products",
+    "icon": "FaProductHunt",
+    "items": [
+      {
+        "name": "Add Product",
+        "icon": "HiPlusCircle",
+        "href": "/admin/product/add-product"
+      },
+      {
+        "name": "Products List",
+        "icon": "HiViewList",
+        "href": "/admin/product/product-list"
+      }
+    ]
+  },
+  {
+    "section": "Categories",
+    "icon": "HiTag",
+    "items": [
+      {
+        "name": "All Categories",
+        "icon": "HiTag",
+        "href": "/admin/product-category/all"
+      },
+      {
+        "name": "Main Categories",
+        "icon": "HiTag",
+        "href": "/admin/product-category/main"
+      },
+      {
+        "name": "Sub Categories",
+        "icon": "HiTag",
+        "href": "/admin/product-category/sub"
+      }
+    ]
+  },
+  {
+    "section": "Brands",
+    "icon": "HiCube",
+    "items": [
+      {
+        "name": "All Brands",
+        "icon": "HiCube",
+        "href": "/admin/product-brand"
+      }
+    ]
+  },
+  {
+    "section": "Suppliers",
+    "icon": "FaIndustry",
+    "items": [
+      {
+        "name": "All Suppliers",
+        "icon": "HiViewList",
+        "href": "/admin/supplier/list"
+      },
+
+      {
+        "name": "Due Payment",
+        "icon": "BsCash",
+        "href": "/admin/supplier/due-payment"
+      },
+      {
+        "name": "Paid Payment",
+        "icon": "BsCash",
+        "href": "/admin/supplier/paid-payment"
+      },
+      {
+        "name": "Make Payment",
+        "icon": "RiSecurePaymentLine",
+        "href": "/admin/supplier/make-payment"
+      }
+    ]
+  },
+  {
+    "section": "Purchase",
+    "icon": "BiSolidPurchaseTag",
+    "items": [
+      {
+        "name": "Purchase List",
+        "icon": "HiCube",
+        "href": "/admin/purchase/purchase-list"
+      },
+      {
+        "name": "Make Purchase",
+        "icon": "HiCube",
+        "href": "/admin/purchase/make-purchase"
+      },
+      {
+        "name": "Purchase Return",
+        "icon": "HiCube",
+        "href": "/admin/purchase/purchase-return"
+      }
+    ]
+  },
+  {
+    "section": "Customers",
+    "icon": "FaUsersGear",
+    "items": [
+      {
+        "name": "All Customers",
+        "icon": "FaUsersGear",
+        "href": "/admin/order/list"
+      }
+    ]
+  },
+  {
+    "section": "Orders",
+    "icon": "HiMap",
+    "items": [
+      {
+        "name": "Order List",
+        "icon": "HiViewList",
+        "href": "/admin/order/list"
+      },
+      {
+        "name": "Return List",
+        "icon": "HiViewList",
+        "href": "/admin/order/return-list"
+      }
+    ]
+  },
+  {
+    "section": "Inventory",
+    "icon": "HiCube",
+    "items": [
+      {
+        "name": "Stock List",
+        "icon": "HiTag",
+        "href": "/admin/inventory/stock"
+      }
+    ]
+  },
+  {
+    "section": "Reviews",
+    "icon": "FaStar",
+    "items": [
+      {
+        "name": "Pending Reviews",
+        "icon": "HiTag",
+        "href": "/admin/reviews/pending"
+      },
+      {
+        "name": "Approved Reviews",
+        "icon": "HiTag",
+        "href": "/admin/reviews/approved"
+      }
+    ]
+  },
+  {
+    "section": "Banners & Promo",
+    "icon": "HiPhotograph",
+    "items": [
+      {
+        "name": "Manage Banners",
+        "icon": "HiPhotograph",
+        "href": "/admin/banner-setting"
+      },
+      {
+        "name": "Manage Widget",
+        "icon": "HiPhotograph",
+        "href": "/admin/widget-setting"
+      }
+    ]
+  },
+  {
+    "section": "Coupons and Deal",
+    "icon": "HiPhotograph",
+    "items": [
+      {
+        "name": "Manage Coupon",
+        "icon": "HiPhotograph",
+        "href": "/admin/coupons"
+      },
+      {
+        "name": "Manage Deal",
+        "icon": "HiPhotograph",
+        "href": "/admin/deals"
+      }
+    ]
+  },
+  {
+    "section": "Accounts",
+    "icon": "HiPhotograph",
+    "items": [
+      {
+        "name": "Profit & Loss",
+        "icon": "HiPhotograph",
+        "href": "/admin/accounts/profit-loss"
+      },
+      {
+        "name": "Expense",
+        "icon": "HiPhotograph",
+        "href": "/admin/accounts/expense"
+      },
+      {
+        "name": "Income",
+        "icon": "HiPhotograph",
+        "href": "/admin/accounts/income"
+      }
+    ]
+  },
+  {
+    "section": "Reports",
+    "icon": "HiPhotograph",
+    "items": [
+      {
+        "name": "Sales Report",
+        "icon": "HiPhotograph",
+        "href": "/admin/report/sales"
+      },
+      {
+        "name": "Purchase Report",
+        "icon": "HiPhotograph",
+        "href": "/admin/report/purchase"
+      },
+      {
+        "name": "Stock Report",
+        "icon": "HiPhotograph",
+        "href": "/admin/report/stock"
+      },
+      {
+        "name": "Stock Alert",
+        "icon": "HiPhotograph",
+        "href": "/admin/report/stock-alert"
+      },
+      {
+        "name": "Order Report",
+        "icon": "HiPhotograph",
+        "href": "/admin/report/order"
+      },
+      {
+        "name": "Expense Report",
+        "icon": "HiPhotograph",
+        "href": "/admin/report/expense"
+      }
+    ]
+  },
+  {
+    "section": "API Integration",
+    "icon": "AiTwotoneApi",
+    "items": [
+      {
+        "name": "Manage Courier",
+        "icon": "HiPhotograph",
+        "href": "/admin/api-integration/courier"
+      },
+      {
+        "name": "Manage Pixel",
+        "icon": "HiPhotograph",
+        "href": "/admin/api-integration/pixel"
+      }
+    ]
+  },
+  {
+    "section": "Activity Log",
+    "icon": "HiPhotograph",
+    "items": [
+      {
+        "name": "Customer Activity",
+        "icon": "HiPhotograph",
+        "href": "/admin/activity/customer"
+      },
+      {
+        "name": "User Activity",
+        "icon": "HiPhotograph",
+        "href": "/admin/activity/user"
+      }
+    ]
+  },
+  {
+    "section": "Visitors Log",
+    "icon": "HiPhotograph",
+    "items": [
+      {
+        "name": "Visitors Log",
+        "icon": "HiPhotograph",
+        "href": "/admin/log/visitor"
+      }
+    ]
+  },
+  {
+    "section": "Setting",
+    "icon": "HiCog",
+    "items": [
+      {
+        "name": "Product Attribute",
+        "icon": "FaProductHunt",
+        "href": "/admin/product/attribute"
+      },
+      {
+        "name": "Manage Location",
+        "icon": "FaMapLocation",
+        "href": "/admin/manage-location"
+      },
+      {
+        "name": "Manage Shipping",
+        "icon": "FaShippingFast",
+        "href": "/admin/manage-shipping"
+      },
+      {
+        "name": "Site Setting",
+        "icon": "FaSitemap",
+        "href": "/admin/site-setting"
+      },
+      {
+        "name": "Color Setting",
+        "icon": "FaPalette",
+        "href": "/admin/color-setting"
+      },
+      {
+        "name": "Site Navigation",
+        "icon": "HiViewList",
+        "href": "/admin/navagation-setting"
+      },
+      {
+        "name": "Language",
+        "icon": "HiViewList",
+        "href": "/admin/language-setting"
+      },
+      {
+        "name": "Currency",
+        "icon": "HiViewList",
+        "href": "/admin/currency-setting"
+      }
+    ]
+  }
+]
