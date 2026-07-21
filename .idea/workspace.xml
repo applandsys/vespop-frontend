@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Feat-antigravity: Font size Fixed">
+    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Init: Initially setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/R2Resolver.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/R2Resolver.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +29,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/applandsys/ecommerce-ptm.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/applandsys/vespop-frontend.git&quot;,
     &quot;accountId&quot;: &quot;a7bf4393-8635-4df0-92d7-c6986542926c&quot;
   }
 }</component>
@@ -46,17 +48,27 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;fix/dorjibari-front-claude-work&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/laragon/www/Ecommerce-PTM/Frontend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/VES/Frontend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2026.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
@@ -101,6 +113,8 @@
       <workItem from="1783953328611" duration="2311000" />
       <workItem from="1784010579440" duration="13955000" />
       <workItem from="1784193572557" duration="3427000" />
+      <workItem from="1784650217541" duration="903000" />
+      <workItem from="1784657066659" duration="126000" />
     </task>
     <task id="LOCAL-00002" summary="Feat-Gemini: Delete Widget">
       <option name="closed" value="true" />
@@ -222,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784618966511</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Init: Initially setup">
+      <option name="closed" value="true" />
+      <created>1784650313586</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1784650313586</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +267,7 @@
     <MESSAGE value="Feat-antigravity: Review completed" />
     <MESSAGE value="Feat-antigravity: Coupon and deal" />
     <MESSAGE value="Feat-antigravity: Font size Fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat-antigravity: Font size Fixed" />
+    <MESSAGE value="Init: Initially setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init: Initially setup" />
   </component>
 </project>
