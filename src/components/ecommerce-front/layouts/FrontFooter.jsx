@@ -10,11 +10,7 @@ import { fetchSettingData } from "@/services/site/SettingData";
 export default function FrontFooter() {
     const pathname = usePathname();
     const hasWord = pathname.includes('admin');
-
-    const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [banners, setBanners] = useState([]);
-    const [siteLogo, setSiteLogo] = useState(null);
     const [siteSetting, setSiteSettings] = useState([]);
 
     useEffect(() => {
