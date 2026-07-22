@@ -10,13 +10,13 @@ import { fetchSettingData } from "@/services/site/SettingData";
 export default function FrontFooter() {
     const pathname = usePathname();
     const hasWord = pathname?.includes('admin') || false;
-    const [siteLogo, setSiteLogo] = useState('logo.png');
+    const [siteInfo,setSiteInfo] = useState([])
 
     useEffect(() => {
         fetchSettingData()
             .then((setting) => {
-                if (setting?.data?.logo) {
-                    setSiteLogo(setting.data.logo);
+                if (setting?.data) {
+                    setSiteInfo(setting.data)
                 }
             })
             .catch((error) => {
@@ -31,7 +31,7 @@ export default function FrontFooter() {
                 <hr />
                 <div className="container flex flex-col md:flex-row justify-between bottom-footer mt-4">
                     <div className="py-4 text-center md:text-left">
-                        <div className="text-xs">© 2026 GhorerBazar. All rights reserved</div>
+                        <div className="text-xs">© 2026  {siteInfo.site_name}. All rights reserved</div>
                     </div>
                 </div>
             </footer>
@@ -50,10 +50,10 @@ export default function FrontFooter() {
                         {/* Column 1 - Logo, Info, Social Icons & Download App */}
                         <div className="col-span-1 md:col-span-2">
                             <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                                GHORER<span className="text-[#F48722]"> BAZAR</span>
+                                {siteInfo.site_name}
                             </h2>
                             <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                                Ghorer Bazar is an e-commerce platform dedicated to providing safe and reliable food to every home.
+                                {siteInfo.site_name} is an e-commerce platform dedicated to providing safe and reliable food to every home.
                             </p>
                             <div className="space-y-2 text-sm text-gray-500">
                                 <p className="flex items-center gap-2">
@@ -61,19 +61,19 @@ export default function FrontFooter() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
-                                    Rampura, Dhaka, Bangladesh
+                                    {siteInfo.address}
                                 </p>
                                 <p className="flex items-center gap-2">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
-                                    09642922922
+                                    {siteInfo.phone}
                                 </p>
                                 <p className="flex items-center gap-2">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
-                                    contact@ghorerbazar.com
+                                    {siteInfo.email}
                                 </p>
                             </div>
 
@@ -196,7 +196,7 @@ export default function FrontFooter() {
                         {/* Copyright */}
                         <div className="text-center lg:text-left">
                             <p className="text-sm text-gray-500">
-                                Copyright © 2026 GhorerBazar
+                                Copyright © 2026  {siteInfo.site_name}
                             </p>
                         </div>
 
