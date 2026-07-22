@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: Image slider fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/Footer.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: Footer dynamic" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +119,7 @@
       <workItem from="1784691958502" duration="727000" />
       <workItem from="1784695306099" duration="509000" />
       <workItem from="1784696852649" duration="535000" />
-      <workItem from="1784702747509" duration="1616000" />
+      <workItem from="1784702747509" duration="1977000" />
     </task>
     <task id="LOCAL-00002" summary="Feat-Gemini: Delete Widget">
       <option name="closed" value="true" />
@@ -276,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784703244281</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fix: Footer dynamic">
+      <option name="closed" value="true" />
+      <created>1784704829568</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1784704829568</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +308,7 @@
     <MESSAGE value="Init: config fixed" />
     <MESSAGE value="Init: Layout fixed" />
     <MESSAGE value="Fix: Image slider fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Image slider fixed" />
+    <MESSAGE value="Fix: Footer dynamic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Footer dynamic" />
   </component>
 </project>

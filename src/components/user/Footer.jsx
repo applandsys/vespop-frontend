@@ -120,7 +120,7 @@ export default function Footer() {
                     </div>
 
                     <div className="mt-4 flex justify-between items-center"> {/* Added items-center here */}
-                        <div>© 2026 Vespop. All rights reserved.</div>
+                        <div>© 2026 {siteInfo.site_name}. All rights reserved.</div>
                         <div className=""> {/* Added a width class to keep the large image contained */}
                             <Image
                                 src="/images/payment_method.png"
