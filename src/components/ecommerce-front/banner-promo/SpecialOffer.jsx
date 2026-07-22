@@ -26,7 +26,7 @@ const SpecialOffer = () => {
 
     return (
         <section className="w-full bg-white py-6 sm:py-10">
-            <div className="mx-auto max-w-7xl px-4">
+            <div className="mx-auto max-w-[1200px] px-4">
                 <div className="relative">
                     <div className="flex flex-col gap-4 lg:flex-row lg:gap-6">
                         <div className="lg:w-1/2">

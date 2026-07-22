@@ -13,7 +13,7 @@ const FeaturedCategoryWidgetList = () => {
     }, []);
 
     return (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-[1200px]">
             {
                 widgets.length && widgets.map(widget => (
                         <>

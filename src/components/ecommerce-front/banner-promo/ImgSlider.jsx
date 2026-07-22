@@ -52,13 +52,13 @@ export default function ImgSlider() {
                     >
                         {/* Text Overlay */}
                         <div className="absolute w-full md:w-1/2 inset-0 flex justify-center text-left ml-4 sm:ml-10 z-20 flex-col pointer-events-none">
-                            <h1 className="text-[1.3rem] lg:text-4xl xl:text-5xl font-bold drop-shadow-lg mb-2 text-center md:text-left text-black">
-                                {item.title_text}
-                            </h1>
+                            {/*<h1 className="text-[1.3rem] lg:text-4xl xl:text-5xl font-bold drop-shadow-lg mb-2 text-center md:text-left text-black">*/}
+                            {/*    {item.title_text}*/}
+                            {/*</h1>*/}
                             <div className="relative text-wrap flex-wrap py-4 px-6">
-                                <h2 className="text-base text-[15px] sm:text-xl md:text-lg max-w-md mb-6 text-center md:text-left text-black">
-                                    {item.sub_text}
-                                </h2>
+                                {/*<h2 className="text-base text-[15px] sm:text-xl md:text-lg max-w-md mb-6 text-center md:text-left text-black">*/}
+                                {/*    {item.sub_text}*/}
+                                {/*</h2>*/}
                             </div>
                         </div>
 

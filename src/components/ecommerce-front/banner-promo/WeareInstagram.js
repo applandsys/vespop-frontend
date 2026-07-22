@@ -42,7 +42,7 @@ export default function WeareInstagram() {
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto px-4 py-8 relative group">
+        <div className="w-full max-w-[1200px] mx-auto px-4 py-8 relative group">
             <div className="overflow-hidden rounded-lg">
                 <div
                     className="flex transition-transform duration-500 ease-out"
