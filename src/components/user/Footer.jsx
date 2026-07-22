@@ -21,12 +21,14 @@ export default function Footer() {
     const [banners, setBanners] = useState([]);
     const [siteLogo, setSiteLogo] = useState(null);
     const [siteSetting, setSiteSettings] = useState([]);
+    const [siteInfo,setSiteInfo] = useState({});
 
     useEffect(() => {
         setLoading(true);
         fetchBannerBySlug("footer-promo")
             .then((json) => {
                 if (json.success) setBanners(json.data);
+                if (json.success) setSiteInfo(json?.data);
             })
             .catch((error) => setError(error))
             .finally(() => setLoading(false));
@@ -34,6 +36,7 @@ export default function Footer() {
         fetchSettingData().then((setting) => {
             setSiteLogo(setting.data.logo);
         }).catch((error) => {});
+
 
         fetchSettingData().then((setting) => {
             setSiteSettings(setting.data);
@@ -101,15 +104,14 @@ export default function Footer() {
                             <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-6">Bangladesh</h3>
                             <div className="text-sm space-y-4 max-w-sm">
                                 <p className="leading-relaxed text-gray-700">
-                                    Ahmed Tower (9th Floor), 28 & 30, Kamal Ataturk Avenue, Banani C/A, Dhaka-1213
+                                    {siteInfo.address}
                                 </p>
                                 <div>
-                                    <a href="mailto:ecommerce@gentlepark.com" className="underline hover:text-gray-600 transition-colors block mb-2">
-                                        ecommerce@gentlepark.com
+                                    <a href={`mailto:${siteInfo.email}`} className="underline hover:text-gray-600 transition-colors block mb-2">
+                                        {siteInfo.email}
                                     </a>
                                     <div className="flex flex-wrap gap-x-2">
-                                        <a href="tel:+8801788999000" className="underline hover:text-gray-600 transition-colors">+8801788999000</a>,
-                                        <a href="tel:+8801982333111" className="underline hover:text-gray-600 transition-colors">+8801982333111</a>
+                                        <a href={`tel:${siteInfo.phone}`} className="underline hover:text-gray-600 transition-colors">{siteInfo.phone}</a>,
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +120,7 @@ export default function Footer() {
                     </div>
 
                     <div className="mt-4 flex justify-between items-center"> {/* Added items-center here */}
-                        <div>© 2026 Dorjibari Demo. All rights reserved.( Demo )</div>
+                        <div>© 2026 Vespop. All rights reserved.</div>
                         <div className=""> {/* Added a width class to keep the large image contained */}
                             <Image
                                 src="/images/payment_method.png"
