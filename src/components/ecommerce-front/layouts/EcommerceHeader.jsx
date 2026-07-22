@@ -94,8 +94,8 @@ const EcommerceHeader = () => {
                     </div>
                 </div>
                 {/* Top part before navigation */}
-                <div className="mt-3 mb-2 md:mx-[360px] relative z-[60]">
-                    <div className="hidden md:block mx-2">
+                <div className="mt-3 mb-2 max-w-[1200px] mx-auto px-4 relative z-[60]">
+                    <div className="hidden md:block">
                         <CartNav />
                     </div>
                 </div>

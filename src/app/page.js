@@ -17,10 +17,10 @@ export default function Home() {
                 <div>
                     <ImgSlider/>
                 </div>
-                <div className="mt-4 mx-auto max-w-7xl w-full px-4 md:px-8">
+                <div className="mt-4 mx-auto max-w-[1200px] w-full px-4">
                     <FeaturedCategoryWidgetList />
                 </div>
-                <div className="mt-4 mx-auto max-w-7xl w-full px-4 md:px-8">
+                <div className="mt-4 mx-auto max-w-[1200px] w-full px-4">
                     <div className="py-10">
                         <div className="flex items-center justify-center gap-6">
                             <span className="h-px w-32 xs:w-16 bg-black"></span>
@@ -48,7 +48,7 @@ export default function Home() {
                 </div>
 
                 {/* 3. Featured Products Section (Now perfectly matched) */}
-                <div className="mt-4 mx-auto max-w-7xl w-full px-4 md:px-8">
+                <div className="mt-4 mx-auto max-w-[1200px] w-full px-4">
                     <div className="py-10">
                         <div className="flex items-center justify-center gap-6">
                             <span className="h-px w-32 xs:w-16 bg-black"></span>

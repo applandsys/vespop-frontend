@@ -32,7 +32,7 @@ const NavigationDropdown = () => {
 
     return (
         <nav ref={navRef} className="relative z-50 w-full bg-black">
-            <div className="flex h-12 items-center justify-center">
+            <div className="flex h-12 items-center justify-center max-w-[1200px] mx-auto px-4">
                 <ul className="hidden md:flex space-x-8 text-sm font-bold uppercase text-white">
                     {navItems.map((item) => (
                         <li key={item.id} className="relative">
