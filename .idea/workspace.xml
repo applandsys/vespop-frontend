@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: Add product">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: Product grid card is updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,6 +126,7 @@
       <workItem from="1784807246563" duration="1774000" />
       <workItem from="1784816851881" duration="108000" />
       <workItem from="1784821592029" duration="3171000" />
+      <workItem from="1784829893622" duration="774000" />
     </task>
     <task id="LOCAL-00002" summary="Feat-Gemini: Delete Widget">
       <option name="closed" value="true" />
@@ -345,14 +344,21 @@
       <option name="project" value="LOCAL" />
       <updated>1784816884351</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fix: Product grid card is updated">
+      <option name="closed" value="true" />
+      <created>1784829913977</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1784829913977</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feat-Gemini: Delete Widget" />
     <MESSAGE value="Feat-Gemini: Language page created" />
     <MESSAGE value="Feat-Gemini: language setting added" />
     <MESSAGE value="Feat-Gemini: Currecny Setting page complted" />
@@ -377,6 +383,7 @@
     <MESSAGE value="Fix: Footer Fixed FrontFooter" />
     <MESSAGE value="Fix: New arrival in home page with new label" />
     <MESSAGE value="Fix: Add product" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Add product" />
+    <MESSAGE value="Fix: Product grid card is updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Product grid card is updated" />
   </component>
 </project>
