@@ -34,6 +34,18 @@ const ProductGridCard = ({ product }) => {
         labels = [],
     } = product;
 
+    /* ================= SIZE CODES ================= */
+    const sizes =
+        product.productVariants
+            ?.flatMap((variant) =>
+                variant.variantAttributes
+                    ?.filter((attr) => attr.attribute?.name?.toLowerCase() === "size")
+                    ?.map((attr) => attr.attributeValue?.codeNumber)
+            )
+            ?.filter(Boolean) || [];
+
+    const uniqueSizes = [...new Set(sizes)];
+    /* ============================================= */
 
     const isHot = labels.some((l) => l.label?.slug === "hot-products");
     const isNew = labels.some((l) => l.label?.slug === "new-arrivals");
@@ -112,7 +124,7 @@ const ProductGridCard = ({ product }) => {
 
                 {/* ================= IMAGE ================= */}
                 <Link href={`/product/detail/${slug}`}>
-                    <div className="relative aspect-[2/3] bg-gray-100 overflow-hidden">
+                    <div className="relative aspect-[3/4] bg-gray-100 overflow-hidden">
                         {mainImage && (
                             <Image
                                 src={`${getImageUrl(mainImage.name)}`}
@@ -136,18 +148,53 @@ const ProductGridCard = ({ product }) => {
                                 onLoad={() => setHoverImageLoaded(true)}
                             />
                         )}
+
+                        {/* ================= SIZE CODES ================= */}
+                        {uniqueSizes.length > 0 && (
+                            <div
+                                className={`absolute bottom-[60px] left-0 right-0 flex justify-center gap-2 transition-all duration-300 ${
+                                    isHovered
+                                        ? "opacity-100 translate-y-0"
+                                        : "opacity-0 translate-y-2"
+                                }`}
+                            >
+                                {uniqueSizes.map((size) => (
+                                    <div
+                                        key={size}
+                                        title={
+                                            size === "S"
+                                                ? "Small"
+                                                : size === "M"
+                                                    ? "Medium"
+                                                    : size === "L"
+                                                        ? "Large"
+                                                        : size
+                                        }
+                                        className="w-7 h-7 rounded-full bg-white border border-gray-300 flex items-center justify-center text-[11px] font-bold text-gray-700 shadow-sm"
+                                    >
+                                        {size}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        {/* ================= QUICK ADD ================= */}
+                        <div
+                            className={`absolute bottom-0 left-0 right-0 transition-all duration-300 ${
+                                isHovered
+                                    ? "translate-y-0 opacity-100"
+                                    : "translate-y-4 opacity-0"
+                            }`}
+                        >
+                            <button
+                                onClick={handleAddToCart}
+                                className="w-full py-3 border-t border-black flex items-center justify-center gap-2 bg-white text-black hover:bg-black hover:text-white transition-all uppercase text-[12px] font-bold tracking-wider"
+                            >
+                                QUICK ADD
+                            </button>
+                        </div>
                     </div>
                 </Link>
-            </div>
-
-            {/* ================= QUICK ADD ================= */}
-            <div className="mt-3 px-1">
-                <button
-                    onClick={handleAddToCart}
-                    className="w-full py-2 border border-black flex items-center justify-center gap-2 bg-white text-black hover:bg-black hover:text-white transition-all uppercase text-[12px] font-bold tracking-wider"
-                >
-                    QUICK ADD
-                </button>
             </div>
 
             {/* ================= INFO ================= */}
