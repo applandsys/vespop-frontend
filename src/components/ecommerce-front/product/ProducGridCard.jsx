@@ -34,18 +34,6 @@ const ProductGridCard = ({ product }) => {
         labels = [],
     } = product;
 
-    /* ================= SIZE CODES ================= */
-    const sizes =
-        product.productVariants
-            ?.flatMap((variant) =>
-                variant.variantAttributes
-                    ?.filter((attr) => attr.attribute?.name?.toLowerCase() === "size")
-                    ?.map((attr) => attr.attributeValue?.codeNumber)
-            )
-            ?.filter(Boolean) || [];
-
-    const uniqueSizes = [...new Set(sizes)];
-    /* ============================================= */
 
     const isHot = labels.some((l) => l.label?.slug === "hot-products");
     const isNew = labels.some((l) => l.label?.slug === "new-arrivals");
@@ -84,7 +72,7 @@ const ProductGridCard = ({ product }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="relative bg-white rounded-md shadow-sm border border-gray-100 overflow-hidden">
+            <div className="relative bg-white overflow-hidden">
                 {/* ================= BADGES ================= */}
                 <div className="absolute top-1 left-1 z-10 flex flex-col gap-1">
                     {isHot && (
@@ -105,26 +93,26 @@ const ProductGridCard = ({ product }) => {
                 </div>
 
                 {/* ================= ACTION ICONS ================= */}
-                <div className="absolute top-2 right-1 z-10 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-3 right-3 z-10 flex flex-col gap-2">
                     <button
                         onClick={handleWishlist}
-                        className="bg-white p-1 rounded-full shadow-sm"
+                        className="p-2 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-black hover:text-white hover:border-black transition-colors shadow-sm"
                     >
                         {isWishlisted ? (
-                            <HeartSolid className="h-6 w-6 text-red-500" />
+                            <HeartSolid className="h-5 w-5 text-red-500" />
                         ) : (
-                            <HeartIcon className="h-6 w-6 text-gray-600" />
+                            <HeartIcon className="h-5 w-5" />
                         )}
                     </button>
 
-                    <button className="bg-white p-1 rounded-full shadow-sm">
-                        <EyeIcon className="h-6 w-6 text-gray-600" />
+                    <button className="p-2 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-black hover:text-white hover:border-black transition-colors shadow-sm">
+                        <EyeIcon className="h-5 w-5" />
                     </button>
                 </div>
 
                 {/* ================= IMAGE ================= */}
                 <Link href={`/product/detail/${slug}`}>
-                    <div className="relative aspect-[3/4] bg-gray-100 overflow-hidden">
+                    <div className="relative aspect-[2/3] bg-gray-100 overflow-hidden">
                         {mainImage && (
                             <Image
                                 src={`${getImageUrl(mainImage.name)}`}
@@ -148,65 +136,30 @@ const ProductGridCard = ({ product }) => {
                                 onLoad={() => setHoverImageLoaded(true)}
                             />
                         )}
-
-                        {/* ================= SIZE CODES ================= */}
-                        {uniqueSizes.length > 0 && (
-                            <div
-                                className={`absolute bottom-[60px] left-0 right-0 flex justify-center gap-2 transition-all duration-300 ${
-                                    isHovered
-                                        ? "opacity-100 translate-y-0"
-                                        : "opacity-0 translate-y-2"
-                                }`}
-                            >
-                                {uniqueSizes.map((size) => (
-                                    <div
-                                        key={size}
-                                        title={
-                                            size === "S"
-                                                ? "Small"
-                                                : size === "M"
-                                                    ? "Medium"
-                                                    : size === "L"
-                                                        ? "Large"
-                                                        : size
-                                        }
-                                        className="w-7 h-7 rounded-full bg-white border border-gray-300 flex items-center justify-center text-[11px] font-bold text-gray-700 shadow-sm"
-                                    >
-                                        {size}
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-
-                        {/* ================= QUICK ADD ================= */}
-                        <div
-                            className={`absolute bottom-0 left-0 right-0 transition-all duration-300 ${
-                                isHovered
-                                    ? "translate-y-0 opacity-100"
-                                    : "translate-y-2 opacity-0"
-                            }`}
-                        >
-                            <button
-                                onClick={handleAddToCart}
-                                className="w-full h-10 border-t border-black flex items-center justify-center gap-2 bg-white text-black hover:bg-black hover:text-white transition-all"
-                            >
-                                <ShoppingCartIcon className="h-6 w-6" />
-                                <span className="text-lg font-bold">QUICK ADD</span>
-                            </button>
-                        </div>
                     </div>
                 </Link>
             </div>
 
+            {/* ================= QUICK ADD ================= */}
+            <div className="mt-3 px-1">
+                <button
+                    onClick={handleAddToCart}
+                    className="w-full py-2 border border-black flex items-center justify-center gap-2 bg-white text-black hover:bg-black hover:text-white transition-all uppercase text-[12px] font-bold tracking-wider"
+                >
+                    QUICK ADD
+                </button>
+            </div>
+
             {/* ================= INFO ================= */}
-            {/* Changed "text-center" to "text-left px-1" to cleanly align text metadata */}
-            <div className="pt-2 text-left px-1">
+            <div className="pt-3 text-center px-2 pb-2">
                 <Link href={`/product/detail/${slug}`}>
-                    <h3 className="text-[14px] font-thin line-clamp-2">{name}</h3>
+                    <h3 className="text-[13px] font-medium text-gray-800 group-hover:underline line-clamp-2 uppercase tracking-wide">
+                        {name}
+                    </h3>
                 </Link>
 
-                <div className="font-bold text-[14px] mt-0.5">
-                    Tk. {(discountPrice || sellPrice)?.toFixed(2)}
+                <div className="font-bold text-[15px] text-black mt-2">
+                    Tk {(discountPrice || sellPrice)?.toFixed(2)}
                 </div>
             </div>
         </div>
