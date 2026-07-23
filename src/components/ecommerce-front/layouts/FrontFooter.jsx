@@ -1,16 +1,25 @@
 "use client";
 
+import { PhoneIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
+import SmallCard from "@/components/common/SmallCard";
+import config from '@/config';
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { fetchBannerBySlug } from "@/services/site/BannerData";
 import { fetchSettingData } from "@/services/site/SettingData";
+import { getImageUrl } from "@/utils/R2Resolver";
+import ExampleWidget from "@/components/common/ExampleWidget";
 
 export default function FrontFooter() {
     const pathname = usePathname();
     const hasWord = pathname.includes('admin');
+
+    const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [banners, setBanners] = useState([]);
+    const [siteLogo, setSiteLogo] = useState(null);
     const [siteSetting, setSiteSettings] = useState([]);
 
     useEffect(() => {

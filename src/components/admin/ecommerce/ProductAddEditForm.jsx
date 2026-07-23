@@ -111,17 +111,17 @@ const ProductAddEditForm = ({ productId }) => {
                      productDetail.images.map(img => img),
                 );
 
-                setAddedProductAttributes(productDetail.productVariant || []);
+                setAddedProductAttributes(productDetail.productVariants || []);
 
-                const hasSize = productDetail.productVariant.some(variant =>
-                    variant.variantAttributes.some(attr => attr.attribute.name === 'Size')
+                const hasSize = (productDetail.productVariants || []).some(variant =>
+                    variant.variantAttributes?.some(attr => attr.attribute.name === 'Size')
                 );
-                const hasColor = productDetail.productVariant.some(variant =>
-                    variant.variantAttributes.some(attr => attr.attribute.name === 'Color')
+                const hasColor = (productDetail.productVariants || []).some(variant =>
+                    variant.variantAttributes?.some(attr => attr.attribute.name === 'Color')
                 );
 
-                const hasWeight = productDetail.productVariant.some(variant =>
-                    variant.variantAttributes.some(attr => attr.attribute.name === 'Weight')
+                const hasWeight = (productDetail.productVariants || []).some(variant =>
+                    variant.variantAttributes?.some(attr => attr.attribute.name === 'Weight')
                 );
 
                 setIsSize(hasSize);

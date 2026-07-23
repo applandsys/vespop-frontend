@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: Footer Fixed FrontFooter">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: New arrival in home page with new label" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,6 +123,7 @@
       <workItem from="1784705939503" duration="1326000" />
       <workItem from="1784710657032" duration="1302000" />
       <workItem from="1784725229098" duration="38000" />
+      <workItem from="1784807246563" duration="1774000" />
     </task>
     <task id="LOCAL-00002" summary="Feat-Gemini: Delete Widget">
       <option name="closed" value="true" />
@@ -326,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784710946519</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Fix: New arrival in home page with new label">
+      <option name="closed" value="true" />
+      <created>1784807266543</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1784807266543</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +364,7 @@
     <MESSAGE value="Fix: Footer dynamicly fixed" />
     <MESSAGE value="Fix: Footer Fixed" />
     <MESSAGE value="Fix: Footer Fixed FrontFooter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Footer Fixed FrontFooter" />
+    <MESSAGE value="Fix: New arrival in home page with new label" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: New arrival in home page with new label" />
   </component>
 </project>
