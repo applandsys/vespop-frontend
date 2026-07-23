@@ -38,9 +38,9 @@ const ProductGridCard = ({ product }) => {
     const sizes =
         product.productVariants
             ?.flatMap((variant) =>
-                variant.variantAttributes?.map(
-                    (attr) => attr.attributeValue?.codeNumber
-                )
+                variant.variantAttributes
+                    ?.filter((attr) => attr.attribute?.name?.toLowerCase() === "size")
+                    ?.map((attr) => attr.attributeValue?.codeNumber)
             )
             ?.filter(Boolean) || [];
 
