@@ -8,7 +8,7 @@ const NewArrivals = () => {
     const [trendingProduct, setTrendingProduct] = useState([]);
 
     useEffect(() => {
-        fetchProductsBySlug('trending-now')
+        fetchProductsBySlug('new-arrival')
             .then((data) => setTrendingProduct(data))
             .catch((error) => setError(error))
     }, []);
