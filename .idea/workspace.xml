@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: Product grid card is updated" />
+    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: Product grid card is updated">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,6 +129,7 @@
       <workItem from="1784816851881" duration="108000" />
       <workItem from="1784821592029" duration="3171000" />
       <workItem from="1784829893622" duration="774000" />
+      <workItem from="1784861486053" duration="599000" />
     </task>
     <task id="LOCAL-00002" summary="Feat-Gemini: Delete Widget">
       <option name="closed" value="true" />
