@@ -7,7 +7,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/shadcn
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/shadcn/table";
 import { Button } from "@/components/ui/shadcn/button";
 import { Badge } from "@/components/ui/shadcn/badge";
-import { Package, Edit, Loader2 } from "lucide-react";
+import { Package, Edit, Loader2, Trash2 } from "lucide-react";
+import config from "@/config";
 
 const AllProducts = () => {
     const [products, setProducts] = useState([]);
@@ -23,6 +24,27 @@ const AllProducts = () => {
                 setLoading(false);
             });
     }, []);
+
+    const handleDelete = async (productId) => {
+        if (!window.confirm("Are you sure you want to delete this product?")) return;
+        
+        try {
+            const res = await fetch(`${config.apiBaseUrl}/admin/product/delete-product/${productId}`, {
+                method: 'DELETE',
+            });
+            const data = await res.json();
+            
+            if (res.ok) {
+                alert(data.message || "Product deleted successfully");
+                setProducts(products.filter(p => p.id !== productId));
+            } else {
+                alert(data.message || "Failed to delete product");
+            }
+        } catch (error) {
+            console.error("Error deleting product:", error);
+            alert("An error occurred while deleting the product.");
+        }
+    };
 
     return (
         <Card className="w-full shadow-sm border-gray-200">
@@ -86,16 +108,26 @@ const AllProducts = () => {
                                             )}
                                         </TableCell>
                                         <TableCell className="text-right">
-                                            <Button 
-                                                variant="outline" 
-                                                size="sm" 
-                                                asChild
-                                                className="h-8 border-gray-200 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
-                                            >
-                                                <Link href={`/admin/product/edit-product/${product.id}`}>
-                                                    <Edit className="w-3.5 h-3.5 mr-1" /> Edit
-                                                </Link>
-                                            </Button>
+                                            <div className="flex justify-end gap-2">
+                                                <Button 
+                                                    variant="outline" 
+                                                    size="sm" 
+                                                    asChild
+                                                    className="h-8 border-gray-200 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                                                >
+                                                    <Link href={`/admin/product/edit-product/${product.id}`}>
+                                                        <Edit className="w-3.5 h-3.5 mr-1" /> Edit
+                                                    </Link>
+                                                </Button>
+                                                <Button 
+                                                    variant="outline" 
+                                                    size="sm" 
+                                                    onClick={() => handleDelete(product.id)}
+                                                    className="h-8 border-gray-200 hover:bg-red-50 hover:text-red-600 text-red-500 transition-colors"
+                                                >
+                                                    <Trash2 className="w-3.5 h-3.5 mr-1" /> Delete
+                                                </Button>
+                                            </div>
                                         </TableCell>
                                     </TableRow>
                                 ))
