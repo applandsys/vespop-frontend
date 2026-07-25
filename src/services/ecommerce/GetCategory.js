@@ -1,7 +1,9 @@
 import config from "@/config";
 
 export const fetchProductCategory = async (slug,searchString,maxprice) => {
-    const res = await fetch(`${config.apiBaseUrl}/category/products/${slug}?search=${searchString}&maxprice=${maxprice}`,{
+    const searchParam = searchString && searchString !== 'null' ? searchString : '';
+    const maxpriceParam = maxprice && maxprice !== '0' ? maxprice : '';
+    const res = await fetch(`${config.apiBaseUrl}/category/products/${slug}?search=${searchParam}&maxprice=${maxpriceParam}`,{
         cache: 'no-store',
     });
     if (!res.ok) throw new Error('Failed to fetch Categories');
