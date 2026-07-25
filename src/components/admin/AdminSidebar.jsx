@@ -38,7 +38,7 @@ const AdminSidebar = () => {
 
     return (
         <div
-            className="h-full min-h-screen overflow-y-auto thin-scrollbar super-thin"
+            className="h-screen overflow-y-auto thin-scrollbar super-thin"
             style={{
                 backgroundColor: menuColors.primaryColor || undefined,
                 "--admin-hover-color": menuColors.hoverColor || undefined,

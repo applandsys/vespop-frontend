@@ -30,10 +30,10 @@ const AdminHeader = ({ onToggleSidebar }) => {
 
     return (
         <div className="bg-white shadow-md px-4 py-3 flex justify-between items-center">
-            {/* Sidebar Toggle */}
+            {/* Mobile Toggle */}
             <button
                 onClick={onToggleSidebar}
-                className="text-gray-600 hover:bg-gray-100 p-2 rounded-md transition-colors"
+                className="md:hidden text-gray-600"
             >
                 ☰
             </button>

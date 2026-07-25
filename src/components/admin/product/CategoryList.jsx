@@ -19,6 +19,7 @@ const CategoryList = ({ categoryList = [] }) => {
                             <TableRow>
                                 <TableHead className="w-16">ID</TableHead>
                                 <TableHead>Name</TableHead>
+                                <TableHead>Slug</TableHead>
                                 <TableHead>Parent</TableHead>
                                 <TableHead>Image</TableHead>
                                 <TableHead className="text-right">Actions</TableHead>
@@ -30,6 +31,7 @@ const CategoryList = ({ categoryList = [] }) => {
                                     <TableRow key={category.id || index} className="hover:bg-gray-50/50">
                                         <TableCell className="font-medium text-gray-500">{index + 1}</TableCell>
                                         <TableCell className="font-semibold text-gray-800">{category.name}</TableCell>
+                                        <TableCell className="text-gray-500 text-sm">{category.slug}</TableCell>
                                         <TableCell>
                                             <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold ${
                                                 category.parent?.name ? 'bg-indigo-50 text-indigo-700' : 'bg-emerald-50 text-emerald-700'
@@ -68,7 +70,7 @@ const CategoryList = ({ categoryList = [] }) => {
                                 ))
                             ) : (
                                 <TableRow>
-                                    <TableCell colSpan={5} className="text-center py-6 text-gray-500">
+                                    <TableCell colSpan={6} className="text-center py-6 text-gray-500">
                                         No categories found.
                                     </TableCell>
                                 </TableRow>
