@@ -14,7 +14,7 @@ const statusColor = {
     PICKED_UP: "bg-blue-100 text-blue-700",
     IN_TRANSIT: "bg-yellow-100 text-yellow-700",
     OUT_FOR_DELIVERY: "bg-purple-100 text-purple-700",
-    DELIVERED: "bg-green-100 text-green-700",
+    DELIVERED: "bg-gray-100 text-black",
     CANCELLED: "bg-red-100 text-red-700"
 };
 
@@ -72,7 +72,7 @@ const ParcelTrackingCard = ({ data }) => {
                                     isActive
                                         ? "bg-blue-600 scale-125 ring-4 ring-blue-200"
                                         : isCompleted
-                                            ? "bg-green-500"
+                                            ? "bg-gray-600"
                                             : "bg-gray-300"
                                 }`}
                             />

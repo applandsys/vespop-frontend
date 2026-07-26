@@ -39,7 +39,7 @@ const ApprovedReviews = () => {
         <Card className="w-full shadow-sm border-gray-200">
             <CardHeader className="border-b bg-gray-50/50 pb-4">
                 <CardTitle className="text-lg font-bold flex items-center gap-2 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <CheckCircle className="w-5 h-5 text-gray-600" />
                     Approved Reviews
                 </CardTitle>
             </CardHeader>

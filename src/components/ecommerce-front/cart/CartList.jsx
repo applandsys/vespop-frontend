@@ -112,7 +112,7 @@ const CartList = () => {
                                             </button>
                                         </div>
                                     </td>
-                                    <td className="px-2 py-2 text-center font-medium text-green-600">
+                                    <td className="px-2 py-2 text-center font-medium text-gray-800">
                                         ${(item.price * item.quantity).toFixed(2)}
                                     </td>
                                     <td className="px-2 py-2 text-center">
@@ -147,7 +147,7 @@ const CartList = () => {
                                         <h3 className="font-medium text-gray-800 text-sm break-words">
                                             {item.name}
                                         </h3>
-                                        <p className="text-green-600 font-semibold mt-1">
+                                        <p className="text-gray-800 font-semibold mt-1">
                                             ${item.price.toFixed(2)}
                                         </p>
                                     </div>
@@ -178,7 +178,7 @@ const CartList = () => {
                                         </button>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <span className="font-semibold text-green-600">
+                                        <span className="font-semibold text-gray-800">
                                             ${(item.price * item.quantity).toFixed(2)}
                                         </span>
                                         <button
@@ -206,26 +206,26 @@ const CartList = () => {
                     <div className="text-sm border-b pb-3 mb-3">
                         <div className="flex justify-between mb-2">
                             <span className="font-bold text-gray-900 font-medium">Subtotal</span>
-                            <span className="font-medium text-green-600">${subtotal}</span>
+                            <span className="font-medium text-gray-800">${subtotal}</span>
                         </div>
                         <div className="flex justify-between mb-2">
-                            <span className="text-green-500 font-medium">Shipping</span>
+                            <span className="text-gray-600 font-medium">Shipping</span>
                             <span className="text-gray-500 font-light italic tracking-wide">Calculated at checkout</span>
                         </div>
                         <div className="ml-4 text-xs">
-                            <div className="flex justify-between mb-1 border-l-2 border-green-400 pl-2">
+                            <div className="flex justify-between mb-1 border-l-2 border-gray-400 pl-2">
                                 <span className="font-light text-gray-700">Inside Dhaka</span>
-                                <span className="font-medium text-green-600">৳60</span>
+                                <span className="font-medium text-gray-800">৳60</span>
                             </div>
-                            <div className="flex justify-between mb-1 border-l-2 border-green-400 pl-2">
+                            <div className="flex justify-between mb-1 border-l-2 border-gray-400 pl-2">
                                 <span className="font-light text-gray-700">Outside Dhaka</span>
-                                <span className="font-medium text-green-600">৳100</span>
+                                <span className="font-medium text-gray-800">৳100</span>
                             </div>
                         </div>
                     </div>
                     <div className="flex justify-between font-bold text-lg mb-4">
                         <span>Total</span>
-                        <span className="text-green-600">${subtotal}</span>
+                        <span className="text-gray-800">${subtotal}</span>
                     </div>
                     <PrimaryButton type="link" href="/checkout" className="w-full justify-center">
                         Proceed to Checkout

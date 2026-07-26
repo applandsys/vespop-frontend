@@ -20,7 +20,7 @@ const SalesReport = ({type=null}) => {
 
     const getStatusBadge = (status) => {
         const map = {
-            paid: "bg-green-500",
+            paid: "bg-gray-600",
             shipped: "bg-blue-500",
             cancel: "bg-red-500",
             return: "bg-orange-500",

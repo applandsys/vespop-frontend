@@ -69,7 +69,7 @@ export default function SignupForm({sponsorId=null}) {
                 <h2 className="text-2xl font-bold text-gray-800 mb-1">Create an Account</h2>
                 <p className="text-sm text-gray-600 mb-6">
                     Already have an account?
-                    <Link href="/auth/login" className="text-green-600 hover:underline">Log in instead!</Link>
+                    <Link href="/auth/login" className="text-gray-800 hover:underline">Log in instead!</Link>
                 </p>
                 <form className="space-y-4" onSubmit={handleSubmit}>
 
@@ -153,20 +153,20 @@ export default function SignupForm({sponsorId=null}) {
                             value={securityCode}
                             onChange={(e) => setSecurityCode(e.target.value)}
                             required label="Security code *" variant="outlined" size="small"  fullWidth/>
-                        <div className="bg-green-100 text-green-700 font-bold px-4 py-2 rounded">{randomNumber}</div>
+                        <div className="bg-gray-100 text-black font-bold px-4 py-2 rounded">{randomNumber}</div>
                     </div>
 
                     <div className="flex items-center mt-4 space-x-2 text-sm">
                         <Checkbox  defaultChecked />
                         <label>
                             I agree to terms & Policy.{' '}
-                            <a href="#" className="text-green-600 hover:underline">Learn more</a>
+                            <a href="#" className="text-gray-800 hover:underline">Learn more</a>
                         </label>
                     </div>
 
                     <button
                         type="submit"
-                        className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded mt-4"
+                        className="w-full bg-gray-600 hover:bg-gray-800 text-white font-semibold py-2 rounded mt-4"
                     >
                         Submit & Register
                     </button>

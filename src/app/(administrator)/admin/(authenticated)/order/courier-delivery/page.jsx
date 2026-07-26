@@ -31,8 +31,8 @@ export default function CourierDeliveryPage() {
                 <CourierDeliveryForm courierList={courierList} orderId={orderId} setCourierOrder={setCourierOrder}/>
             </div>
             <div className="flex flex-col gap-2">
-                <div className="bg-green-100 rounded-md p-4">Order Detail </div>
-                <div className="bg-green-100 rounded-md p-4">Courier Detail
+                <div className="bg-gray-100 rounded-md p-4">Order Detail </div>
+                <div className="bg-gray-100 rounded-md p-4">Courier Detail
                     {JSON.stringify(courierOrder)}
                 </div>
             </div>

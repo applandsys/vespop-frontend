@@ -55,7 +55,7 @@ export default function CustomerReviews({ product }) {
                                     <div className="text-sm text-gray-500">{review.createdAt}</div>
                                     <div className="mt-1 text-gray-700">{review.review}</div>
                                     <div className="mt-2 flex items-center justify-between">
-                                        <span className="text-green-600 font-semibold">{review.name}</span>
+                                        <span className="text-gray-800 font-semibold">{review.name}</span>
                                         <div className="flex text-yellow-400">
                                             {Array.from({ length: 5 }).map((_, i) => (
                                                 <svg
@@ -98,7 +98,7 @@ export default function CustomerReviews({ product }) {
                             <span className="w-12 text-sm text-gray-600">{i + 1} star</span>
                             <div className="w-full h-3 bg-gray-200 rounded">
                                 <div
-                                    className="h-3 bg-green-500 rounded"
+                                    className="h-3 bg-gray-600 rounded"
                                     style={{ width: `${percent}%` }}
                                 ></div>
                             </div>

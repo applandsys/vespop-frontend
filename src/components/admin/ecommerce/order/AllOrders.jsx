@@ -27,7 +27,7 @@ const AllOrders = ({type=null}) => {
 
     const getStatusBadgeVariant = (status) => {
         const map = {
-            paid: "bg-green-100 text-green-800 border-green-200",
+            paid: "bg-gray-100 text-black border-gray-200",
             shipped: "bg-blue-100 text-blue-800 border-blue-200",
             cancel: "bg-red-100 text-red-800 border-red-200",
             return: "bg-orange-100 text-orange-800 border-orange-200",
@@ -206,7 +206,7 @@ const AllOrders = ({type=null}) => {
                                                 variant="outline" 
                                                 size="sm" 
                                                 onClick={() => handleCourierRedirect(order.id)}
-                                                className="h-7 text-xs border-green-200 hover:bg-green-50 hover:text-green-600 transition-colors px-2"
+                                                className="h-7 text-xs border-gray-200 hover:bg-gray-50 hover:text-gray-800 transition-colors px-2"
                                             >
                                                 <Truck className="w-3 h-3 mr-1" /> Courier
                                             </Button>
@@ -244,7 +244,7 @@ const AllOrders = ({type=null}) => {
                                         ? ((fraudResult.total_cancel / fraudResult.total_parcels) * 100).toFixed(1)
                                         : 0;
                                 let riskLabel = "Low Risk";
-                                let riskColor = "bg-green-100 text-green-700";
+                                let riskColor = "bg-gray-100 text-black";
 
                                 if (cancelRate >= 50) {
                                     riskLabel = "High Risk";
@@ -270,7 +270,7 @@ const AllOrders = ({type=null}) => {
                                                     <p className="font-semibold">{fraudResult.total_parcels}</p>
                                                 </div>
                                                 <div>
-                                                    <p className="text-green-600">Delivered</p>
+                                                    <p className="text-gray-800">Delivered</p>
                                                     <p className="font-semibold">{fraudResult.total_delivered}</p>
                                                 </div>
                                                 <div>
@@ -299,7 +299,7 @@ const AllOrders = ({type=null}) => {
                                                             </p>
                                                         </div>
                                                         <div className="flex gap-4 mt-2 text-sm">
-                                                            <span className="text-green-600">
+                                                            <span className="text-gray-800">
                                                                 Delivered: {api.total_delivered_parcels}
                                                             </span>
                                                             <span className="text-red-600">

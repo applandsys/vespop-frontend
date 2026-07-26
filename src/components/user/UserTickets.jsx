@@ -47,7 +47,7 @@ export default function UserTickets({ supportTickets, openModal }) {
                   <span
                       className={`px-3 py-1 rounded-full text-xs font-medium ${
                           ticket.status === "Open"
-                              ? "bg-green-100 text-green-700"
+                              ? "bg-gray-100 text-black"
                               : ticket.status === "In Progress"
                                   ? "bg-yellow-100 text-yellow-700"
                                   : "bg-gray-200 text-gray-700"

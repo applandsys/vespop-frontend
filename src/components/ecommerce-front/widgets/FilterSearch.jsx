@@ -355,7 +355,7 @@ const FilterSearch = ({ highestPriceProduct = 0, lowestPriceProduct = 0 }) => {
             <button
                 type="button"
                 onClick={handleFilterSubmit}
-                className="w-full bg-green-500 text-white py-2 rounded-lg font-semibold hover:bg-green-600 transition"
+                className="w-full bg-gray-600 text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition"
             >
                 Filter
             </button>

@@ -69,7 +69,7 @@ export default function CustomerActivityLogPage() {
 
     const getActivityColor = (type) => {
         const types = {
-            'LOGIN': 'bg-green-100 text-green-700',
+            'LOGIN': 'bg-gray-100 text-black',
             'LOGOUT': 'bg-orange-100 text-orange-700',
             'REGISTER': 'bg-blue-100 text-blue-700',
             'UPDATE_PROFILE': 'bg-purple-100 text-purple-700',

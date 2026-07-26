@@ -30,14 +30,14 @@ export default function CartDropdown({ onClose }) {
                         <Link
                             href="/cart"
                             onClick={handleLinkClick}
-                            className="text-sm text-green-500 rounded px-4 py-2 hover:bg-yellow-500 hover:text-white border border-green-500 text-center"
+                            className="text-sm text-gray-600 rounded px-4 py-2 hover:bg-yellow-500 hover:text-white border border-gray-600 text-center"
                         >
                             View Cart
                         </Link>
                         <Link
                             href="/checkout"
                             onClick={handleLinkClick}
-                            className="text-sm bg-green-600 text-white rounded px-4 py-2 hover:bg-green-700 text-center"
+                            className="text-sm bg-gray-800 text-white rounded px-4 py-2 hover:bg-black text-center"
                         >
                             Checkout
                         </Link>

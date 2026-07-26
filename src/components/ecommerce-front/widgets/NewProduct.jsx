@@ -20,7 +20,7 @@ export default function NewProducts() {
     return (
         <div className="w-72 bg-white p-4 rounded-xl shadow-md">
             <h2 className="text-lg font-semibold text-gray-800">New products</h2>
-            <div className="mt-1 mb-3 h-0.5 w-20 bg-green-400 rounded-full"></div>
+            <div className="mt-1 mb-3 h-0.5 w-20 bg-gray-400 rounded-full"></div>
             { products.length > 0 && products.map((product, idx) => (
                 <div key={idx} className="flex items-center py-3 border-t first:border-none">
                      <Link href={`/product/detail/${product.slug}`}>
@@ -31,7 +31,7 @@ export default function NewProducts() {
                             alt={product.images[0].altText} className="w-12 h-12 object-cover rounded-md"
                         />
                      </Link>
-                        <div className="flex justify-between"><div className={`mx-2 font-semibold capitalize ${product.rating >= 4 ? 'text-gray-800' : 'text-green-900'}`}>
+                        <div className="flex justify-between"><div className={`mx-2 font-semibold capitalize ${product.rating >= 4 ? 'text-gray-800' : 'text-black'}`}>
                             {product.name}
                         </div>
                         <div className="font-semibold text-gray-600 text-right mx-4">

@@ -97,7 +97,7 @@ export default function NavigationMobile() {
                         </Link>
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="text-white text-xl bg-green-700 rounded-full p-1 hover:bg-green-200 transition-colors"
+                            className="text-white text-xl bg-black rounded-full p-1 hover:bg-gray-200 transition-colors"
                             aria-label="Close menu"
                         >
                             <IoClose />
@@ -112,12 +112,12 @@ export default function NavigationMobile() {
                             <input
                                 type="text"
                                 placeholder="Search for items..."
-                                className="w-full px-4 py-2 border rounded-full text-sm focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                className="w-full px-4 py-2 border rounded-full text-sm focus:ring-2 focus:ring-gray-600 focus:outline-none"
                             />
                         </div>
 
                         {/* Categories */}
-                        <div className="mb-2 font-semibold text-sm text-green-700 flex items-center gap-2">
+                        <div className="mb-2 font-semibold text-sm text-black flex items-center gap-2">
                             <FiMenu className="w-4 h-4" />
                             Browse Categories
                         </div>
@@ -140,7 +140,7 @@ export default function NavigationMobile() {
                                                     className="w-6 h-6 rounded object-cover"
                                                 />
                                             )}
-                                            <span className="text-xs font-semibold text-gray-700 hover:text-green-500">
+                                            <span className="text-xs font-semibold text-gray-700 hover:text-gray-600">
                                                 {item.name}
                                             </span>
                                         </Link>
@@ -183,16 +183,16 @@ export default function NavigationMobile() {
                         {/* Account Links */}
                         <div className="mt-6 border-t pt-4 text-sm space-y-2 text-gray-700">
                             <Link href="/user/signup" onClick={() => setIsOpen(false)}>
-                                <div className="hover:text-green-600 cursor-pointer transition-colors">
+                                <div className="hover:text-gray-800 cursor-pointer transition-colors">
                                     Sign Up
                                 </div>
                             </Link>
                             <Link href="/auth/login" onClick={() => setIsOpen(false)}>
-                                <div className="hover:text-green-600 cursor-pointer transition-colors">
+                                <div className="hover:text-gray-800 cursor-pointer transition-colors">
                                     Log In
                                 </div>
                             </Link>
-                            <div className="font-medium text-green-700 mt-2">
+                            <div className="font-medium text-black mt-2">
                                 {siteSetting.phone || 'Call Us'}
                             </div>
                         </div>
@@ -206,7 +206,7 @@ export default function NavigationMobile() {
                                         href={siteSetting.facebook_url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-gray-100 hover:bg-green-500 hover:text-white p-2 rounded-full transition-all duration-200"
+                                        className="bg-gray-100 hover:bg-gray-600 hover:text-white p-2 rounded-full transition-all duration-200"
                                         aria-label="Facebook"
                                     >
                                         <FaFacebookF size={14} />
@@ -214,7 +214,7 @@ export default function NavigationMobile() {
                                 )}
                                 <a
                                     href="#"
-                                    className="bg-gray-100 hover:bg-green-500 hover:text-white p-2 rounded-full transition-all duration-200"
+                                    className="bg-gray-100 hover:bg-gray-600 hover:text-white p-2 rounded-full transition-all duration-200"
                                     aria-label="Twitter"
                                 >
                                     <FaTwitter size={14} />
@@ -224,7 +224,7 @@ export default function NavigationMobile() {
                                         href={siteSetting.instagram_url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-gray-100 hover:bg-green-500 hover:text-white p-2 rounded-full transition-all duration-200"
+                                        className="bg-gray-100 hover:bg-gray-600 hover:text-white p-2 rounded-full transition-all duration-200"
                                         aria-label="Instagram"
                                     >
                                         <FaInstagram size={14} />
@@ -232,7 +232,7 @@ export default function NavigationMobile() {
                                 )}
                                 <a
                                     href="#"
-                                    className="bg-gray-100 hover:bg-green-500 hover:text-white p-2 rounded-full transition-all duration-200"
+                                    className="bg-gray-100 hover:bg-gray-600 hover:text-white p-2 rounded-full transition-all duration-200"
                                     aria-label="Pinterest"
                                 >
                                     <FaPinterestP size={14} />

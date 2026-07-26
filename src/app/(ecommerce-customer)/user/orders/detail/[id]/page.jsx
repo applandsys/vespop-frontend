@@ -56,7 +56,7 @@ export default function OrderDetail({ params }) {
         PENDING: "bg-yellow-100 text-yellow-700",
         PAID: "bg-blue-100 text-blue-700",
         SHIPPED: "bg-indigo-100 text-indigo-700",
-        DELIVERED: "bg-green-100 text-green-700",
+        DELIVERED: "bg-gray-100 text-black",
         CANCELLED: "bg-red-100 text-red-700",
     };
 
@@ -79,7 +79,7 @@ export default function OrderDetail({ params }) {
                             logo: `${config.publicPath}/${siteSetting.logo}`,
                         })
                     }
-                    className="bg-green-600 text-white px-4 py-2 rounded-md text-sm hover:bg-green-700"
+                    className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm hover:bg-black"
                 >
                     Download Invoice
                 </button>

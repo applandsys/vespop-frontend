@@ -114,7 +114,7 @@ const ProductStock = () => {
                                                 <TableCell className="text-center font-medium text-orange-500">
                                                     {variant.reserved}
                                                 </TableCell>
-                                                <TableCell className="text-center font-bold text-green-600">
+                                                <TableCell className="text-center font-bold text-gray-800">
                                                     {available}
                                                 </TableCell>
                                                 <TableCell className="text-right">

@@ -194,7 +194,7 @@ const AddEditSupplier = ({ editingSupplier, setEditingSupplier, fetchSupplier })
                             type="button"
                             onClick={handleToggleActive}
                             className={`relative w-11 h-6 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
-                                formData.status === "ACTIVE" ? "bg-green-500" : "bg-gray-300"
+                                formData.status === "ACTIVE" ? "bg-gray-600" : "bg-gray-300"
                             }`}
                         >
                             <span

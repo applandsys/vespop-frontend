@@ -49,7 +49,7 @@ export default function OrderList() {
                     <hr className="my-2" />
                     <div className="flex justify-between font-semibold">
                         <span>Total</span>
-                        <span className="text-green-600">${total.toFixed(2)}</span>
+                        <span className="text-gray-800">${total.toFixed(2)}</span>
                     </div>
                 </>
             )}

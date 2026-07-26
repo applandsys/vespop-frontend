@@ -11,7 +11,7 @@ const PaidSupplier = ({ paids = [] }) => {
         <Card className="w-full shadow-sm border-gray-200">
             <CardHeader className="border-b bg-gray-50/50 pb-4">
                 <CardTitle className="text-lg font-bold flex items-center gap-2 text-gray-800">
-                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <CheckCircle className="w-5 h-5 text-gray-600" />
                     Paid History
                 </CardTitle>
             </CardHeader>
@@ -59,7 +59,7 @@ const PaidSupplier = ({ paids = [] }) => {
                                         {item.method || '-'}
                                     </TableCell>
                                     <TableCell>
-                                        <Badge variant="secondary" className="bg-green-50 text-green-700 border-green-200 capitalize text-[10px]">
+                                        <Badge variant="secondary" className="bg-gray-50 text-black border-gray-200 capitalize text-[10px]">
                                             {item.status || 'Paid'}
                                         </Badge>
                                     </TableCell>

@@ -85,7 +85,7 @@ const BannerList = ({ banners, onEdit, onRefresh }) => {
                                         )}
                                     </TableCell>
                                     <TableCell className="text-center">
-                                        <Badge variant="secondary" className={banner.is_active ? "bg-green-50 text-green-700 border-green-200" : "bg-gray-100 text-gray-600"}>
+                                        <Badge variant="secondary" className={banner.is_active ? "bg-gray-50 text-black border-gray-200" : "bg-gray-100 text-gray-600"}>
                                             {banner.is_active ? 'Active' : 'Inactive'}
                                         </Badge>
                                     </TableCell>

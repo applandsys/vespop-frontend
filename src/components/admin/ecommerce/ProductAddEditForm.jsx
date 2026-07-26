@@ -997,7 +997,7 @@ const ProductAddEditForm = ({ productId }) => {
                                             </div>
                                             <div>
                                                 <div
-                                                    className="p-2 bg-green-300 md:mt-6 rounded-md cursor-pointer text-center"
+                                                    className="p-2 bg-gray-300 md:mt-6 rounded-md cursor-pointer text-center"
                                                     onClick={addSelectedProductAttribute}
                                                 >
                                                     Add

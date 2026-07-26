@@ -105,7 +105,7 @@ export default function CategoryCarousel() {
                 {/* Left Scroll Button */}
                 <button
                     onClick={() => scroll("prev")}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-green-600 hover:text-white rounded-full p-2 shadow-lg transition-all duration-300"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-800 hover:text-white rounded-full p-2 shadow-lg transition-all duration-300"
                     aria-label="Previous category"
                     style={{ left: '-10px' }}
                 >
@@ -151,7 +151,7 @@ export default function CategoryCarousel() {
                 {/* Right Scroll Button */}
                 <button
                     onClick={() => scroll("next")}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-green-600 hover:text-white rounded-full p-2 shadow-lg transition-all duration-300"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-800 hover:text-white rounded-full p-2 shadow-lg transition-all duration-300"
                     aria-label="Next category"
                     style={{ right: '-10px' }}
                 >

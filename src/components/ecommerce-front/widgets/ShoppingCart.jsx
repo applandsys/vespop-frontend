@@ -35,7 +35,7 @@ const ShoppingCart = () => {
                     <MdOutlineShoppingBag className="h-5 w-5 lg:h-6 lg:w-6 text-gray-600 group-hover:text-blue-600 transition-colors"/>
                     {cartCount > 0 && (
                         <span
-                            className="absolute -top-1 -right-1 bg-green-600 text-white text-xs font-semibold px-1 rounded-full min-w-[18px] text-center">
+                            className="absolute -top-1 -right-1 bg-gray-800 text-white text-xs font-semibold px-1 rounded-full min-w-[18px] text-center">
                                     {cartCount}
                         </span>
                     )}

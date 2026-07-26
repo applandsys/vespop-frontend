@@ -23,7 +23,7 @@ const ProductSection = ({ title, products, layout = "grid", badgeText = null, ba
                     <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold ${
                         badgeColor === "red" ? "bg-red-100 text-red-600" :
                             badgeColor === "yellow" ? "bg-yellow-100 text-yellow-600" :
-                                badgeColor === "green" ? "bg-green-100 text-green-600" :
+                                badgeColor === "green" ? "bg-gray-100 text-gray-800" :
                                     "bg-gray-100 text-gray-600"
                     }`}>
                         {badgeText}

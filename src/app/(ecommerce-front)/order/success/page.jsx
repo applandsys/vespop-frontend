@@ -55,9 +55,9 @@ export default function OrderSuccess() {
             <div className="max-w-2xl w-full bg-white shadow-lg rounded-2xl p-10">
 
                 {/* Success Icon */}
-                <div className="bg-green-100 p-4 rounded-full w-fit mx-auto mb-4">
+                <div className="bg-gray-100 p-4 rounded-full w-fit mx-auto mb-4">
                     <svg
-                        className="w-10 h-10 text-green-600"
+                        className="w-10 h-10 text-gray-800"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
@@ -97,7 +97,7 @@ export default function OrderSuccess() {
                             className={`font-medium ${
                                 orderDetail.status === "PENDING"
                                     ? "text-amber-600"
-                                    : "text-green-600"
+                                    : "text-gray-800"
                             }`}
                         >
                             {orderDetail.status}
@@ -140,7 +140,7 @@ export default function OrderSuccess() {
                                     </p>
 
                                     {item.product.discountPrice && (
-                                        <p className="text-xs text-green-600">
+                                        <p className="text-xs text-gray-800">
                                             Discount applied
                                         </p>
                                     )}
@@ -160,7 +160,7 @@ export default function OrderSuccess() {
                 <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                     <a
                         href="/user/orders"
-                        className="px-6 py-3 bg-green-600 text-white rounded-xl shadow hover:bg-green-700 transition text-center"
+                        className="px-6 py-3 bg-gray-800 text-white rounded-xl shadow hover:bg-black transition text-center"
                     >
                         View Orders
                     </a>

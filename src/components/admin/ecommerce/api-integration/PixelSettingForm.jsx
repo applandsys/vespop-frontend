@@ -97,7 +97,7 @@ export default function PixelSettingForm() {
         </button>
 
         {success && (
-          <p className="text-green-600 text-sm">
+          <p className="text-gray-800 text-sm">
             Settings saved successfully ✅
           </p>
         )}

@@ -41,7 +41,7 @@ const ProfitSummary = () => {
             <StatCard
                 title="Total Income"
                 value={totalIncome}
-                color="text-green-600"
+                color="text-gray-800"
             />
             <StatCard
                 title="Total Expense"
@@ -51,7 +51,7 @@ const ProfitSummary = () => {
             <StatCard
                 title="Net Profit"
                 value={profit}
-                color={profit >= 0 ? "text-green-700" : "text-red-700"}
+                color={profit >= 0 ? "text-black" : "text-red-700"}
                 highlight
             />
         </div>

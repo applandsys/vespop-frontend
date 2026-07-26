@@ -119,8 +119,8 @@ const ReviewForm = ({product}) => {
                 <button
                     type="submit"
                     disabled={submitting}
-                    className={`w-full py-3 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 ${
-                        submitting ? "bg-green-300 cursor-not-allowed" : "bg-green-500 hover:bg-green-600"
+                    className={`w-full py-3 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 ${
+                        submitting ? "bg-gray-300 cursor-not-allowed" : "bg-gray-600 hover:bg-gray-800"
                     }`}
                 >
                     {submitting ? "Submitting..." : "Submit Review"}

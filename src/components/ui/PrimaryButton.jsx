@@ -15,13 +15,13 @@ const PrimaryButton = ({
         type === 'button' ? (
             <button
                 onClick={handleCLick}
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded flex items-center justify-center"
+                className="w-full bg-gray-800 hover:bg-black text-white font-semibold py-2 rounded flex items-center justify-center"
             >
                 {children}
             </button>
         ) :
             (
-                <Link href={href} className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded flex items-center justify-center"> {children}</Link>
+                <Link href={href} className="w-full bg-gray-800 hover:bg-black text-white font-semibold py-2 rounded flex items-center justify-center"> {children}</Link>
             )
 
     );

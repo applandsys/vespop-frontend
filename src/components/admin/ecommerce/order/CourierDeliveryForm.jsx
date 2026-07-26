@@ -146,7 +146,7 @@ const CourierDeliveryForm = ({courierList, orderId,setCourierOrder}) => {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="flex flex-end bg-green-600 text-white p-2 rounded"
+                    className="flex flex-end bg-gray-800 text-white p-2 rounded"
                 >
                     {loading ? "Creating..." : "Create Courier Order"}
                 </button>

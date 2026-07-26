@@ -24,7 +24,7 @@ const AddWishlistIcon = ({product}) => {
 
     return (
         <>
-            <button className=" rounded-md px-2 py-1 hover:bg-green-100  border border-green-400" onClick={addToWishlist}>♡</button>
+            <button className=" rounded-md px-2 py-1 hover:bg-gray-100  border border-gray-400" onClick={addToWishlist}>♡</button>
         </>
     );
 };

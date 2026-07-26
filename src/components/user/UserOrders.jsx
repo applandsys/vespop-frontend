@@ -43,7 +43,7 @@ export default function UserOrders({orderList}) {
                               className={`px-3 py-1 rounded-full text-xs font-medium
                               ${
                                   order.status === "Delivered"
-                                      ? "bg-green-100 text-green-700"
+                                      ? "bg-gray-100 text-black"
                                       : order.status === "Shipped"
                                           ? "bg-blue-100 text-blue-700"
                                           : order.status === "Processing"

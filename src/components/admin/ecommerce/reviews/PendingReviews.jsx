@@ -98,7 +98,7 @@ const PendingReviews = () => {
                                                 size="sm" 
                                                 onClick={() => handleAction(item.id, 'approve')}
                                                 disabled={loadingActionId === item.id}
-                                                className="h-8 border-green-200 text-green-700 hover:bg-green-50 transition-colors"
+                                                className="h-8 border-gray-200 text-black hover:bg-gray-50 transition-colors"
                                             >
                                                 <CheckCircle className="w-3.5 h-3.5 mr-1" /> Approve
                                             </Button>

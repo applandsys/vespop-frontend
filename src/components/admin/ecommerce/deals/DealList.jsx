@@ -102,7 +102,7 @@ export default function DealList({ refresh, onEdit }) {
                                             <span className="font-medium text-gray-900">{deal.priority}</span>
                                         </TableCell>
                                         <TableCell className="text-center">
-                                            <Badge variant="secondary" className={deal.isActive ? "bg-green-50 text-green-700 border-green-200" : "bg-gray-100 text-gray-600"}>
+                                            <Badge variant="secondary" className={deal.isActive ? "bg-gray-50 text-black border-gray-200" : "bg-gray-100 text-gray-600"}>
                                                 {deal.isActive ? 'Active' : 'Inactive'}
                                             </Badge>
                                         </TableCell>

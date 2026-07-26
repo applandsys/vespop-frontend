@@ -87,17 +87,17 @@ function Login({type}) {
                                 <label>
                                     <input type="checkbox" className="mr-2" />Remember me
                                 </label>
-                                <a href="#" className="text-green-600">Forgot password?</a>
+                                <a href="#" className="text-gray-800">Forgot password?</a>
                             </div>
                             <div className="flex justify-between items-center text-sm mb-2 mt-4">
                                 <div>
-                                     Dont have an account ? <Link href="/auth/signup" className="text-green-600">Create</Link>
+                                     Dont have an account ? <Link href="/auth/signup" className="text-gray-800">Create</Link>
                                 </div>
                                 <div>
                                     <button
                                         type="submit"
                                         disabled={isLoading}
-                                        className="bg-green-600 text-white px-4 py-2 rounded flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                        className="bg-gray-800 text-white px-4 py-2 rounded flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
                                         {isLoading && (
                                             <svg

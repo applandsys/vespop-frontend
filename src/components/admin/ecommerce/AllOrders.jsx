@@ -88,7 +88,7 @@ const AllOrders = () => {
                Detail
            </button>
            <button 
-               class="paid-btn bg-green-600 rounded-md px-2 py-1 text-white text-xs"
+               class="paid-btn bg-gray-800 rounded-md px-2 py-1 text-white text-xs"
                data-id="${order.id}">
                Paid
            </button>
@@ -167,7 +167,7 @@ const AllOrders = () => {
                                         : 0;
 
                                 let riskLabel = "Low Risk";
-                                let riskColor = "bg-green-100 text-green-700";
+                                let riskColor = "bg-gray-100 text-black";
 
                                 if (cancelRate >= 50) {
                                     riskLabel = "High Risk";
@@ -200,7 +200,7 @@ const AllOrders = () => {
                                                 </div>
 
                                                 <div>
-                                                    <p className="text-green-600">Delivered</p>
+                                                    <p className="text-gray-800">Delivered</p>
                                                     <p className="font-semibold">{fraudResult.total_delivered}</p>
                                                 </div>
 
@@ -235,7 +235,7 @@ const AllOrders = () => {
                                                         </div>
 
                                                         <div className="flex gap-4 mt-2 text-sm">
-                                                <span className="text-green-600">
+                                                <span className="text-gray-800">
                                                     Delivered: {api.total_delivered_parcels}
                                                 </span>
                                                             <span className="text-red-600">

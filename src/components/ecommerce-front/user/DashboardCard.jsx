@@ -73,7 +73,7 @@ export default function DashboardCard({
                 <div className="flex flex-col items-end">
                     {delta ? (
                         <div className="flex items-center gap-2 text-sm">
-                        <span className={`text-xs font-semibold ${deltaUp ? 'text-green-600' : 'text-rose-600'}`}>
+                        <span className={`text-xs font-semibold ${deltaUp ? 'text-gray-800' : 'text-rose-600'}`}>
                           {deltaUp ? '▲' : '▼'} {Math.abs(delta.value)}%
                         </span>
                             <span className="text-xs text-slate-400">vs last period</span>
