@@ -33,7 +33,7 @@ const AdminHeader = ({ onToggleSidebar }) => {
             {/* Mobile Toggle */}
             <button
                 onClick={onToggleSidebar}
-                className="md:hidden text-gray-600"
+                className="text-gray-600"
             >
                 ☰
             </button>

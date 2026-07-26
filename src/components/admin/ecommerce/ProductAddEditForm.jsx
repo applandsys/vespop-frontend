@@ -463,7 +463,7 @@ const ProductAddEditForm = ({ productId }) => {
     return (
         <div>
         <form onSubmit={handleSubmit} className=" mx-auto ">
-            <div className="grid grid-cols-[1fr_3fr] gap-2 h-screen ">
+            <div className="flex flex-col md:grid md:grid-cols-[1fr_3fr] gap-4">
                 <aside>
                    <UiCard>
                        <div className="">
@@ -686,7 +686,7 @@ const ProductAddEditForm = ({ productId }) => {
                         </div>
 
                         <div className="space-y-8">
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
                                     <select
@@ -768,7 +768,7 @@ const ProductAddEditForm = ({ productId }) => {
                             <div className="border-b border-gray-300 mb-4">
                                 <label className="font-bold text-gray-600">Default Price:</label>
                             </div>
-                            <div className="grid grid-cols-4 gap-4">
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Buy Price</label>
                                     <input
@@ -815,7 +815,7 @@ const ProductAddEditForm = ({ productId }) => {
                             </div>
                         </div>
 
-                        <div className="flex space-x-2 mx-4 my-10">
+                        <div className="flex flex-wrap gap-4 md:space-x-2 md:gap-0 mx-4 my-10">
 
                             <div className="flex space-x-2 items-center">
                                 <input
@@ -861,7 +861,7 @@ const ProductAddEditForm = ({ productId }) => {
                             </div>
                         </div>
                         { addedProductAttributes && addedProductAttributes.length > 0 &&(
-                            <div className="mb-8">
+                            <div className="mb-8 overflow-x-auto">
                                 <table className="min-w-full divide-y divide-gray-200 border border-gray-300">
                                     <thead className="bg-gray-100">
                                     <tr>
@@ -951,7 +951,7 @@ const ProductAddEditForm = ({ productId }) => {
                                             </div>
                                         )}
 
-                                        <div className="flex gap-2">
+                                        <div className="grid grid-cols-2 md:flex md:flex-row gap-2 items-end">
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-700 mb-1">Sku</label>
                                                 <input
@@ -997,7 +997,7 @@ const ProductAddEditForm = ({ productId }) => {
                                             </div>
                                             <div>
                                                 <div
-                                                    className="p-2 bg-green-300 mt-6 rounded-md cursor-pointer"
+                                                    className="p-2 bg-green-300 md:mt-6 rounded-md cursor-pointer text-center"
                                                     onClick={addSelectedProductAttribute}
                                                 >
                                                     Add

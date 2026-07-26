@@ -157,7 +157,7 @@
   },
   {
     "section": "Banners & Promo",
-    "icon": "HiPhotograph",
+    "icon": "HiTemplate",
     "items": [
       {
         "name": "Manage Banners",
@@ -166,80 +166,80 @@
       },
       {
         "name": "Manage Widget",
-        "icon": "HiPhotograph",
+        "icon": "HiViewGridAdd",
         "href": "/admin/widget-setting"
       }
     ]
   },
   {
     "section": "Coupons and Deal",
-    "icon": "HiPhotograph",
+    "icon": "HiTicket",
     "items": [
       {
         "name": "Manage Coupon",
-        "icon": "HiPhotograph",
+        "icon": "HiReceiptTax",
         "href": "/admin/coupons"
       },
       {
         "name": "Manage Deal",
-        "icon": "HiPhotograph",
+        "icon": "HiLightningBolt",
         "href": "/admin/deals"
       }
     ]
   },
   {
     "section": "Accounts",
-    "icon": "HiPhotograph",
+    "icon": "HiCurrencyDollar",
     "items": [
       {
         "name": "Profit & Loss",
-        "icon": "HiPhotograph",
+        "icon": "HiChartPie",
         "href": "/admin/accounts/profit-loss"
       },
       {
         "name": "Expense",
-        "icon": "HiPhotograph",
+        "icon": "HiTrendingDown",
         "href": "/admin/accounts/expense"
       },
       {
         "name": "Income",
-        "icon": "HiPhotograph",
+        "icon": "HiTrendingUp",
         "href": "/admin/accounts/income"
       }
     ]
   },
   {
     "section": "Reports",
-    "icon": "HiPhotograph",
+    "icon": "HiDocumentReport",
     "items": [
       {
         "name": "Sales Report",
-        "icon": "HiPhotograph",
+        "icon": "HiChartBar",
         "href": "/admin/report/sales"
       },
       {
         "name": "Purchase Report",
-        "icon": "HiPhotograph",
+        "icon": "HiShoppingCart",
         "href": "/admin/report/purchase"
       },
       {
         "name": "Stock Report",
-        "icon": "HiPhotograph",
+        "icon": "HiDatabase",
         "href": "/admin/report/stock"
       },
       {
         "name": "Stock Alert",
-        "icon": "HiPhotograph",
+        "icon": "HiBell",
         "href": "/admin/report/stock-alert"
       },
       {
         "name": "Order Report",
-        "icon": "HiPhotograph",
+        "icon": "HiMap",
         "href": "/admin/report/order"
       },
       {
         "name": "Expense Report",
-        "icon": "HiPhotograph",
+        "icon": "HiTrendingDown",
         "href": "/admin/report/expense"
       }
     ]
@@ -250,39 +250,39 @@
     "items": [
       {
         "name": "Manage Courier",
-        "icon": "HiPhotograph",
+        "icon": "HiTruck",
         "href": "/admin/api-integration/courier"
       },
       {
         "name": "Manage Pixel",
-        "icon": "HiPhotograph",
+        "icon": "HiCode",
         "href": "/admin/api-integration/pixel"
       }
     ]
   },
   {
     "section": "Activity Log",
-    "icon": "HiPhotograph",
+    "icon": "HiClipboardList",
     "items": [
       {
         "name": "Customer Activity",
-        "icon": "HiPhotograph",
+        "icon": "HiUserGroup",
         "href": "/admin/activity/customer"
       },
       {
         "name": "User Activity",
-        "icon": "HiPhotograph",
+        "icon": "HiUser",
         "href": "/admin/activity/user"
       }
     ]
   },
   {
     "section": "Visitors Log",
-    "icon": "HiPhotograph",
+    "icon": "HiEye",
     "items": [
       {
         "name": "Visitors Log",
-        "icon": "HiPhotograph",
+        "icon": "HiEye",
         "href": "/admin/log/visitor"
       }
     ]
