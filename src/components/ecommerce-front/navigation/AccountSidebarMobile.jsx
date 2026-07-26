@@ -73,10 +73,12 @@ export default function AccountSidebarMobile({ isOpen, onClose }) {
         ${isOpen ? "translate-x-0" : "translate-x-full"}`}
             >
                 {/* Header */}
-                <div className="flex items-center justify-between p-4 border-b">
-                    <h2 className="font-semibold text-lg">My Account</h2>
-                    <button onClick={onClose}>
-                        <FiX className="w-6 h-6" />
+                <div className="flex items-center justify-between p-4 mb-2">
+                    <h2 className="font-semibold text-base text-gray-900">
+                        {customer ? `Hi, ${customer.name}` : "My Account"}
+                    </h2>
+                    <button onClick={onClose} aria-label="Close">
+                        <FiX className="w-5 h-5 text-gray-600 hover:text-gray-900 transition-colors" />
                     </button>
                 </div>
 
@@ -85,37 +87,35 @@ export default function AccountSidebarMobile({ isOpen, onClose }) {
                     {!customer ? (
                         <LoginForm type="customer" />
                     ): (
-                        <>
-                            <div
-                                className="py-1">
-                                <div
-                                    className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer">
-                                    <HomeIcon className="h-4 w-4 mr-3"/>
-                                    <Link
-                                        href="/user/dashboard"
-                                        className="text-gray-600 hover:text-blue-600 font-medium"
-                                    >
-                                        Dashboard
-                                    </Link>
-                                </div>
-
-                                <div
-                                    className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer">
-                                    <UserIcon className="h-4 w-4 mr-3"/>
-                                    Profile
-                                </div>
-
-                                <div className="border-t border-gray-100 my-1"></div>
-
-                                <div
-                                    onClick={handleLogout}
-                                    className="flex items-center px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
-                                >
-                                    <PowerIcon className="h-4 w-4 mr-3"/>
-                                    Logout
-                                </div>
-                            </div>
-                        </>
+                        <div className="flex flex-col">
+                            <Link
+                                href="/user/profile"
+                                onClick={onClose}
+                                className="block py-4 text-[13px] font-medium text-gray-700 hover:text-blue-600 border-b border-gray-100 transition-colors"
+                            >
+                                Account Details
+                            </Link>
+                            <Link
+                                href="/user/addresses"
+                                onClick={onClose}
+                                className="block py-4 text-[13px] font-medium text-gray-700 hover:text-blue-600 border-b border-gray-100 transition-colors"
+                            >
+                                Addresses
+                            </Link>
+                            <Link
+                                href="/user/reset-password"
+                                onClick={onClose}
+                                className="block py-4 text-[13px] font-medium text-gray-700 hover:text-blue-600 border-b border-gray-100 transition-colors"
+                            >
+                                Reset Your Password
+                            </Link>
+                            <button
+                                onClick={handleLogout}
+                                className="block w-full text-left py-4 text-[13px] font-medium text-gray-700 hover:text-red-600 transition-colors"
+                            >
+                                Log Out
+                            </button>
+                        </div>
                     )}
                 </div>
             </div>

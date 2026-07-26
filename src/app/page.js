@@ -1,5 +1,6 @@
 import "./globals.css";
 import React from "react";
+import Link from "next/link";
 import EcommerceFrontLayout from "@/layouts/EcommerceFrontLayout";
 import ImgSlider from "@/components/ecommerce-front/banner-promo/ImgSlider";
 import FeaturedCategoryWidgetList from "@/components/ecommerce-front/product/FeaturedCategoryWidgetList";
@@ -30,12 +31,12 @@ export default function Home() {
                             <span className="h-px w-32 xs:w-16 bg-black"></span>
                         </div>
                         <div className="mt-3 flex justify-center">
-                            <a
-                                href="#"
+                            <Link
+                                href="/new-arrivals"
                                 className="text-sm text-gray-700 underline underline-offset-4 hover:text-black"
                             >
                                 View All
-                            </a>
+                            </Link>
                         </div>
                         <div className="mt-4">
                             <NewArrivals />

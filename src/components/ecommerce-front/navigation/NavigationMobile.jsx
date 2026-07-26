@@ -3,21 +3,24 @@
 import React, { useEffect, useState } from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaPinterestP } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
-import { FiMenu } from 'react-icons/fi';
+import { FiMenu, FiSearch, FiUser, FiShoppingBag } from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 import { fetchSettingData } from "@/services/site/SettingData";
 import { getCategories } from "@/services/ecommerce/getCategories";
 import { getImageUrl } from "@/utils/R2Resolver";
 
-export default function NavigationMobile() {
+export default function NavigationMobile({ setClose, isOpen: parentIsOpen, onOpenAccount, onOpenCart }) {
 
     const [categories, setCategories] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [siteLogo, setSiteLogo] = useState('logo.png');
     const [siteSetting, setSiteSetting] = useState({});
     const [loading, setLoading] = useState(true);
+    const cartItems = useSelector((state) => state.cart?.items || []);
+    const cartCount = cartItems.length;
 
     useEffect(() => {
         // Add error handling for API calls
@@ -64,7 +67,7 @@ export default function NavigationMobile() {
     return (
         <>
             {/* Only show on mobile/tablet - hidden on large screens */}
-            <nav className="block lg:hidden relative">
+            <nav className="block lg:hidden relative w-full">
 
                 {/* Overlay */}
                 {isOpen && (
@@ -243,39 +246,51 @@ export default function NavigationMobile() {
                 </div>
 
                 {/* ================= MOBILE MENU BUTTON ================= */}
-                <div className="flex justify-between items-center p-3 bg-white shadow-sm">
-                    {/* Hamburger Menu Button */}
-                    <button
-                        onClick={() => setIsOpen(true)}
-                        className="p-2 rounded-md hover:bg-gray-100 transition-colors"
-                        aria-label="Open menu"
-                    >
-                        <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                <div className="flex justify-between items-center p-3 bg-white shadow-sm border-b relative">
+                    {/* Left Group */}
+                    <div className="flex items-center gap-3 z-10">
+                        <button
+                            onClick={() => setIsOpen(true)}
+                            className="p-1 rounded-md hover:bg-gray-100 transition-colors"
+                            aria-label="Open menu"
                         >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                  d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
+                            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                        <button aria-label="Search" className="p-1 hover:bg-gray-100 rounded-md transition-colors">
+                            <FiSearch className="w-[22px] h-[22px] text-gray-800" />
+                        </button>
+                    </div>
 
                     {/* Mobile Logo */}
-                    <Link href="/">
-                        {siteLogo && (
-                            <Image
-                                src={getImageUrl(siteLogo)}
-                                width={100}
-                                height={32}
-                                alt="logo"
-                                priority
-                            />
-                        )}
-                    </Link>
+                    <div className="absolute left-1/2 -translate-x-1/2 z-0">
+                        <Link href="/">
+                            {siteLogo && (
+                                <Image
+                                    src={getImageUrl(siteLogo)}
+                                    width={110}
+                                    height={36}
+                                    alt="logo"
+                                    priority
+                                    className="max-h-9 w-auto"
+                                />
+                            )}
+                        </Link>
+                    </div>
 
-                    {/* Mobile Icons Placeholder */}
-                    <div className="w-8"></div>
+                    {/* Right Group */}
+                    <div className="flex items-center gap-3 z-10">
+                        <button onClick={onOpenAccount} aria-label="User Profile" className="p-1 hover:bg-gray-100 rounded-md transition-colors">
+                            <FiUser className="w-[22px] h-[22px] text-gray-800" />
+                        </button>
+                        <button onClick={onOpenCart} aria-label="Cart" className="p-1 relative hover:bg-gray-100 rounded-md transition-colors">
+                            <FiShoppingBag className="w-[22px] h-[22px] text-gray-800" />
+                            <span className="absolute -top-1 -right-1 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+                                {cartCount}
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </nav>
         </>

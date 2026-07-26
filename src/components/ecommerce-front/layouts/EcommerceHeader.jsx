@@ -41,57 +41,18 @@ const EcommerceHeader = () => {
     return (
         <>
             <header className="mx-auto">
-                <div className="flex  md:hidden">
-                    <NavigationMobile setClose={setClose} isOpen={isOpen}/>
+                <div className="flex w-full md:hidden">
+                    <NavigationMobile 
+                        setClose={setClose} 
+                        isOpen={isOpen} 
+                        onOpenAccount={() => setIsOpenAccount(true)}
+                        onOpenCart={() => setIsOpenCart(true)}
+                    />
                     <AccountSidebarMobile
                         isOpen={isOpenAccount}
                         onClose={() => setIsOpenAccount(false)}
                     />
                     <CartSidebarMobile isOpen={isOpenCart} onClose={() => setIsOpenCart(false)}/>
-                </div>
-                <div className="md:hidden md:mx-[200px] py-2 border-b bg-white border-2 border-blue-600">
-                    <div className="flex items-center justify-between">
-                        {/* LEFT — Hamburger + Search */}
-                        <div className="flex items-center gap-3">
-                            {/* Hamburger */}
-                            {!isOpen && (
-                                <button
-                                    onClick={() => setIsOpen(true)}
-                                    className="p-1"
-                                >
-                                    <FiMenu className="h-6 w-6"/>
-                                </button>
-                            )}
-
-                            {/* Search Icon */}
-                            <button onClick={() => setIsOpen(true)}
-                                    className="p-1">
-                                <FiSearch className="h-6 w-6"/>
-                            </button>
-
-                        </div>
-
-                        {/* CENTER — Logo */}
-                        <div className="flex justify-center">
-                            <Image
-                                src={`${config.publicPath}/${siteLogo}`}
-                                width={120}
-                                height={40}
-                                alt="logo"
-                                priority
-                            />
-                        </div>
-
-                        {/* RIGHT — User + Cart */}
-                        <div className="flex items-center gap-3">
-                            <button className="p-1"    onClick={() => setIsOpenAccount(prev=>!prev)}>
-                                <FiUser className="h-6 w-6"/>
-                            </button>
-                            <button className="p-1 relative" onClick={() => setIsOpenCart(prev=>!prev)}>
-                                <FiShoppingBag className="h-6 w-6"/>
-                            </button>
-                        </div>
-                    </div>
                 </div>
                 {/* Top part before navigation */}
                 <div className="mt-3 mb-2 max-w-[1200px] mx-auto px-4 relative z-[60]">
@@ -99,7 +60,7 @@ const EcommerceHeader = () => {
                         <CartNav />
                     </div>
                 </div>
-                <div className="relative z-50">
+                <div className="hidden md:block relative z-50">
                   <NavigationDropdown/>
                 </div>
             </header>

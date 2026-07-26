@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: Admin Sidebar service">
+    <list default="true" id="fdef581b-0159-47bf-946c-a72e7e3dd538" name="Changes" comment="Fix: all back shade">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +135,7 @@
       <workItem from="1784960781387" duration="352000" />
       <workItem from="1784962667801" duration="1231000" />
       <workItem from="1784982056228" duration="2560000" />
-      <workItem from="1785051330248" duration="941000" />
+      <workItem from="1785051330248" duration="3322000" />
     </task>
     <task id="LOCAL-00002" summary="Feat-Gemini: Delete Widget">
       <option name="closed" value="true" />
@@ -409,14 +409,21 @@
       <option name="project" value="LOCAL" />
       <updated>1785051392800</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Fix: all back shade">
+      <option name="closed" value="true" />
+      <created>1785053254780</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1785053254780</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feat-antigravity: Visitor log and activity log" />
     <MESSAGE value="Feat-antigravity: Courier Delete and api integration page done" />
     <MESSAGE value="Feat-antigravity: Purchase return complete" />
     <MESSAGE value="Feat-antigravity: Product list and add edit form with shadcn" />
@@ -441,6 +448,7 @@
     <MESSAGE value="Fix: Admin sidebar is now fantastic" />
     <MESSAGE value="Fix: Category page fixed" />
     <MESSAGE value="Fix: Admin Sidebar service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Admin Sidebar service" />
+    <MESSAGE value="Fix: all back shade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: all back shade" />
   </component>
 </project>
